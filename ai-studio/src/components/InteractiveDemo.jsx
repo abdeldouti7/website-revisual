@@ -82,7 +82,7 @@ const InteractiveDemo = () => {
   const benefits = [c.benefit1, c.benefit2, c.benefit3, c.benefit4];
 
   return (
-    <section id="demo" ref={containerRef} className="py-24 px-5 lg:px-10 max-w-7xl mx-auto">
+    <section id="demo" ref={containerRef} className="py-16 sm:py-24 px-4 sm:px-5 lg:px-10 max-w-7xl mx-auto">
       <div className="demo-anim text-center mb-10 max-w-3xl mx-auto">
         <h2 className="font-heading font-semibold text-3xl md:text-4xl lg:text-5xl text-primary tracking-tight max-w-2xl mx-auto leading-tight mb-4">
           {c.heading1}{' '}
@@ -100,12 +100,12 @@ const InteractiveDemo = () => {
         {/* Left Column */}
         <div className="demo-anim w-full lg:w-[60%] flex flex-col items-center">
           {/* Style Selector */}
-          <div className="flex items-center justify-center gap-2 mb-6 bg-white/50 backdrop-blur-sm p-1.5 rounded-full border border-primary/10 shadow-sm w-full max-w-md">
+          <div className="flex items-center justify-center gap-1.5 mb-5 bg-white/50 backdrop-blur-sm p-1.5 rounded-full border border-primary/10 shadow-sm w-full max-w-md">
             {styleKeys.map((s) => (
               <button
                 key={s}
                 onClick={() => setStyle(s)}
-                className={`flex-1 px-4 py-2.5 rounded-full font-sans text-sm font-medium transition-all duration-300 ${
+                className={`flex-1 px-2 sm:px-4 py-2 sm:py-2.5 rounded-full font-sans text-xs sm:text-sm font-medium transition-all duration-300 ${
                   style === s ? 'bg-primary text-white shadow-md' : 'text-primary/70 hover:text-primary hover:bg-black/5'
                 }`}
               >
@@ -117,7 +117,7 @@ const InteractiveDemo = () => {
           {/* Interactive Slider */}
           <div
             ref={sliderRef}
-            className="relative w-full aspect-[4/3] md:aspect-[16/10] bg-background/50 rounded-[2rem] overflow-hidden select-none touch-none shadow-2xl border border-primary/5 cursor-ew-resize group"
+            className="relative w-full aspect-[16/10] bg-background/50 rounded-[2rem] overflow-hidden select-none touch-none shadow-2xl border border-primary/5 cursor-ew-resize group"
             onPointerDown={(e) => { e.currentTarget.setPointerCapture(e.pointerId); handlePointerMove(e); }}
             onPointerMove={(e) => e.buttons === 1 && handlePointerMove(e)}
             onPointerUp={(e) => e.currentTarget.releasePointerCapture(e.pointerId)}
