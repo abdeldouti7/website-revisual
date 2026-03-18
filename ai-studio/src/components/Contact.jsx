@@ -83,8 +83,13 @@ const Contact = () => {
               </button>
             </div>
           ) : (
+<<<<<<< HEAD
             <form
               className="flex flex-col gap-5"
+=======
+            <form 
+              className="flex flex-col gap-5" 
+>>>>>>> cbb01218e72325a5e04d8f6c0d37d5ed270db30c
               onSubmit={handleSubmit}
               action="https://formspree.io/f/mgonroop"
               method="POST"
