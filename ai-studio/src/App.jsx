@@ -1,4 +1,5 @@
 import React from 'react';
+import { LanguageProvider } from './LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
@@ -16,23 +17,25 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="relative w-full bg-background overflow-x-hidden selection:bg-accent selection:text-primary text-dark font-sans leading-normal">
-      <div className="noise-overlay"></div>
-      <Navbar />
-      <Hero />
-      <Problem />
-      <InteractiveDemo />
-      <ContentGeneration />
-      <HowItWorks />
-      <TransformationMockup />
-      <WhyRevisual />
-      <Pricing />
-      <ComparisonTable />
-      <FAQ />
-      <About />
-      <Contact />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="relative w-full bg-background overflow-x-hidden selection:bg-accent selection:text-primary text-dark font-sans leading-normal">
+        <div className="noise-overlay"></div>
+        <Navbar />
+        <Hero />
+        <Problem />
+        <InteractiveDemo />
+        <ContentGeneration />
+        <HowItWorks />
+        <TransformationMockup />
+        <WhyRevisual />
+        <Pricing />
+        <ComparisonTable />
+        <FAQ />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 
