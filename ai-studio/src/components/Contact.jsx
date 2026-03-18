@@ -13,7 +13,7 @@ const Contact = () => {
     const data = new FormData(form);
     
     try {
-      const response = await fetch("https://formspree.io/f/xvgzbgww", {
+      const response = await fetch("https://formspree.io/f/mgonroop", {
         method: "POST",
         body: data,
         headers: {
@@ -110,7 +110,12 @@ const Contact = () => {
               </button>
             </div>
           ) : (
-            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+            <form 
+              className="flex flex-col gap-5" 
+              onSubmit={handleSubmit}
+              action="https://formspree.io/f/mgonroop"
+              method="POST"
+            >
               <div className="flex flex-col gap-2">
                 <label htmlFor="name" className="font-sans font-medium text-sm text-primary">Name</label>
                 <input 
