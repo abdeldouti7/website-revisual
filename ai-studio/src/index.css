@@ -98,3 +98,79 @@
 .animate-progress {
   animation: progress 3s ease-in-out infinite;
 }
+
+/* ─────────────────────────────────────────────────────────────
+   ABOUT ANIMATION — "The Reveal"
+   Continuous vertical scanning to reveal the 'Upgraded' state.
+───────────────────────────────────────────────────────────────*/
+
+.about-anim-wrapper {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 320 / 240;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-anim-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ABOUT ANIMATION — "The Digital Staging"
+   Horizontal scanning reveal (Left-to-Right).
+───────────────────────────────────────────────────────────────*/
+
+.about-anim-wrapper {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 340 / 240;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.about-anim-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ── The Masking Rectangle (reveals blueprint horizontally) ── */
+@keyframes about-reveal-h-mask {
+  0% { width: 0; opacity: 0; }
+  10% { opacity: 1; }
+  45%, 80% { width: 340px; opacity: 1; } /* Fully revealed */
+  90%, 100% { width: 0; opacity: 0; }
+}
+
+.anim-mask-rect-h {
+  animation: about-reveal-h-mask 10s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* ── The Vertical Scanning Bar (moves across X) ── */
+@keyframes about-h-scan-bar {
+  0% { transform: translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  45%, 80% { transform: translateX(340px); opacity: 1; }
+  85% { opacity: 0; }
+  90%, 100% { transform: translateX(0); opacity: 0; }
+}
+
+.anim-scan-bar-h {
+  animation: about-h-scan-bar 10s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-mask-rect-h { width: 340px; opacity: 1; animation: none; }
+  .anim-scan-bar-h { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-mask-rect { height: 240px; opacity: 1; animation: none; }
+  .anim-scan-bar { display: none; }
+  .anim-window-glow { opacity: 1; animation: none; }
+}

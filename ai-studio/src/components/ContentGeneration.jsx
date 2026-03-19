@@ -195,10 +195,10 @@ const ContentGeneration = () => {
             <tbody className="font-sans text-sm">
               <tr className="border-b border-primary/5 hover:bg-black/[0.02] transition-colors">
                 <td className="py-6 px-8 text-primary font-medium whitespace-nowrap">{c.row1Label}</td>
-                <td className="py-6 px-8 text-dark/70">€3,000–€3,500 / month</td>
-                <td className="py-6 px-8 text-dark/70">€80–€150 per post</td>
-                <td className="py-6 px-8 text-dark/70">€200–€400 per post</td>
-                <td className="py-6 px-8 font-medium text-primary bg-accent/10 text-base">€15–€19 per post</td>
+                <td className="py-6 px-8 text-dark/70">{c.row1InHouse}</td>
+                <td className="py-6 px-8 text-dark/70">{c.row1Freelance}</td>
+                <td className="py-6 px-8 text-dark/70">{c.row1Agency}</td>
+                <td className="py-6 px-8 font-medium text-primary bg-accent/10 text-base">{c.row1Revisual}</td>
               </tr>
               <tr className="border-b border-primary/5 hover:bg-black/[0.02] transition-colors">
                 <td className="py-6 px-8 text-primary font-medium whitespace-nowrap">{c.row2Label}</td>

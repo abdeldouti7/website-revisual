@@ -145,33 +145,21 @@ const Pricing = () => {
                 <div className="space-y-3 mb-5 relative">
                   <div className="flex justify-between items-center py-3 border-b border-black/5">
                     <div>
-                      <div className="font-sans text-sm text-dark font-semibold">{c.posts10} <span className="text-xs font-normal text-dark/50">{c.perMonth}</span></div>
+                      <div className="font-sans text-sm text-dark font-semibold">{c.posts10}</div>
                       <div className="font-sans text-[11px] text-dark/50">{c.freq10}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-mono font-semibold text-primary text-base">€199 <span className="text-[11px] font-sans text-dark/50 font-normal">{c.perMonth}</span></div>
-                      <div className="font-sans text-[11px] text-dark/50">€19.9 per post</div>
                     </div>
                   </div>
                   <div className="flex justify-between items-center py-4 px-3 -mx-3 border border-accent/20 bg-accent/5 rounded-xl relative shadow-sm">
                     <div className="absolute -top-3 left-3 bg-accent text-white px-2.5 py-0.5 rounded-full text-[9px] font-medium uppercase tracking-wider shadow-sm">{c.mostPopular}</div>
                     <div>
-                      <div className="font-sans text-sm text-dark font-semibold">{c.posts20} <span className="text-xs font-normal text-dark/50">{c.perMonth}</span></div>
+                      <div className="font-sans text-sm text-dark font-semibold">{c.posts20}</div>
                       <div className="font-sans text-[11px] text-dark/50">{c.freq20}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-mono font-semibold text-primary text-lg">€349 <span className="text-[11px] font-sans text-dark/50 font-normal">{c.perMonth}</span></div>
-                      <div className="font-sans text-[11px] text-dark/50 font-medium text-primary">€17.45 per post</div>
                     </div>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-black/5">
                     <div>
-                      <div className="font-sans text-sm text-dark font-semibold">{c.posts40} <span className="text-xs font-normal text-dark/50">{c.perMonth}</span></div>
+                      <div className="font-sans text-sm text-dark font-semibold">{c.posts40}</div>
                       <div className="font-sans text-[11px] text-dark/50">{c.freq40}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-mono font-semibold text-primary text-base">€599 <span className="text-[11px] font-sans text-dark/50 font-normal">{c.perMonth}</span></div>
-                      <div className="font-sans text-[11px] text-dark/50">€14.97 per post</div>
                     </div>
                   </div>
                 </div>
