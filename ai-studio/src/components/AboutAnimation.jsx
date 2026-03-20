@@ -1,84 +1,136 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 const AboutAnimation = () => {
+  const containerRef = useRef(null);
+  const bloomRef = useRef(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      // 1. Core Transformation Loop: The "Breath"
+      const tl = gsap.timeline({ repeat: -1 });
+
+      tl.to(bloomRef.current, {
+        attr: { r: 240 }, // Scale up the "Potential" wave
+        duration: 4,
+        ease: "power2.inOut",
+      })
+      .to('.vision-content', {
+        opacity: 1,
+        duration: 2,
+        stagger: 0.1
+      }, "-=3")
+      .to(bloomRef.current, {
+        attr: { r: 0 }, // Recede back to empty
+        duration: 4,
+        delay: 3,
+        ease: "power2.inOut",
+      })
+      .to('.vision-content', {
+        opacity: 0,
+        duration: 1.5,
+      }, "-=3.5");
+
+      // 2. Subtle rotation for 3D depth
+      gsap.to('.room-master', {
+        rotateX: 2,
+        rotateY: 4,
+        duration: 6,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
+    }, containerRef);
+    
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="about-anim-wrapper" aria-hidden="true">
+    <div ref={containerRef} className="relative w-full aspect-square flex items-center justify-center p-4 lg:p-12 overflow-hidden" aria-hidden="true">
+      <div className="absolute inset-0 bg-radial-gradient from-primary/5 to-transparent pointer-events-none" />
+      
       <svg
-        viewBox="0 0 340 240"
+        viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="about-anim-svg"
+        className="w-full h-full overflow-visible"
+        style={{ filter: 'drop-shadow(0 30px 60px rgba(14, 59, 42, 0.12))' }}
       >
         <defs>
-          {/* HORIZONTAL reveal mask */}
-          <clipPath id="horizontal-scan-mask">
-            <rect x="0" y="0" width="0" height="240" className="anim-mask-rect-h" />
-          </clipPath>
+          {/* The Liquid Mask of Potential */}
+          <mask id="potential-mask">
+            <circle ref={bloomRef} cx="200" cy="200" r="0" fill="white" />
+          </mask>
+
+          {/* Architectural Textures */}
+          <linearGradient id="oak-floor" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#C19A6B" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#8B5A2B" stopOpacity="0.6" />
+          </linearGradient>
           
-          <pattern id="floor-grid-pattern" width="12" height="12" patternUnits="userSpaceOnUse">
-            <path d="M 12 0 L 0 0 0 12" fill="none" stroke="#0E3B2A" strokeWidth="0.15" strokeOpacity="0.2"/>
-          </pattern>
+          <linearGradient id="wall-shadow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#0E3B2A" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#0E3B2A" stopOpacity="0.3" />
+          </linearGradient>
         </defs>
 
-        {/* ── BASE LAYER: THE GHOST SYSTEM (Ambient) ── */}
-        <g opacity="0.05" stroke="#0E3B2A">
-          <path d="M60 85 L170 35 L280 85" strokeWidth="0.3" /> {/* Roof outline */}
-          <path d="M170 140 V220" strokeWidth="1" /> {/* Rear Corner */}
-          <path d="M60 170 V90" strokeWidth="0.5" />
-          <path d="M280 170 V90" strokeWidth="0.5" />
-          <path d="M60 170 L170 220 L280 170" strokeWidth="0.25" /> {/* Front threshold */}
-        </g>
-
-        {/* ── REVEAL LAYER: THE FURNISHED INTERIOR (Horizontal Mask) ── */}
-        <g clipPath="url(#horizontal-scan-mask)">
-          {/* Grounded Floor */}
-          <path d="M60 170 L170 220 L280 170 L170 120 Z" fill="#F5F3EE" />
-          <path d="M60 170 L170 220 L280 170 L170 120 Z" fill="url(#floor-grid-pattern)" />
-
-          {/* Staged Walls */}
-          <g stroke="#0E3B2A" strokeWidth="1">
-            <path d="M170 140 V220" strokeWidth="1.4" /> {/* Focus point corner */}
-            <path d="M60 170 V90 L170 140" />
-            <path d="M170 140 L280 90 V170" />
-            <path d="M60 170 L170 120 L280 170" strokeWidth="0.8" />
+        <g className="room-master" style={{ transformOrigin: '200px 200px' }}>
+          
+          {/* ──────── LAYER 1: THE RAW SHELL (Base State) ──────── */}
+          <g className="base-layer" stroke="#0E3B2A" strokeOpacity="0.1" strokeWidth="0.5">
+            {/* The Empty Room Boundaries */}
+            <path d="M80 200 L200 280 L320 200 L200 120 Z" /> {/* Floor */}
+            <path d="M80 200 V100 L200 180" /> {/* Left Wall */}
+            <path d="M200 180 L320 100 V200" /> {/* Right Wall */}
+            <line x1="200" y1="180" x2="200" y2="280" /> {/* Corner */}
           </g>
 
-          {/* ── RECOGNIZABLE FURNITURE (Grounded) ── */}
-          <g stroke="#0E3B2A" strokeWidth="0.8" fill="#0E3B2A" fillOpacity="0.04">
+          {/* ──────── LAYER 2: THE VISION (Staged State) ──────── */}
+          <g mask="url(#potential-mask)">
+            {/* Oak Floor Manifestation */}
+            <path d="M80 200 L200 280 L320 200 L200 120 Z" fill="url(#oak-floor)" />
             
-            {/* 1. SOFA (Living Room Area) - Grounded at floor left */}
-            <g transform="translate(100, 168)">
-              {/* Grounded base */}
-              <path d="M0 0 L40 20 L55 12 L15 -8 Z" fillOpacity="0.08" />
-              {/* Sofa silhouette: Backrest + Seat cushions */}
-              <path d="M0 0 V-15 L40 5 V20 Z" />
-              <path d="M15 -8 V-23 L55 -3 V12 Z" />
-              <path d="M0 -15 L15 -23 L55 -3 L40 5 Z" /> {/* Top shelf of cushions */}
+            {/* Walls Manifestation */}
+            <path d="M80 200 V100 L200 180 V280 Z" fill="url(#wall-shadow)" fillOpacity="0.1" />
+            <path d="M200 180 L320 100 V200 L200 280 Z" fill="url(#wall-shadow)" fillOpacity="0.2" />
+
+            {/* Furniture Bloomed from Potential */}
+            <g className="vision-content" opacity="0" stroke="#0E3B2A" strokeWidth="1.2">
+              {/* Premium Sofa silhouette */}
+              <g transform="translate(130, 210)">
+                <path d="M0 0 L40 20 L60 10 L20 -10 Z" fill="#0E3B2A" fillOpacity="0.15" /> {/* Seat */}
+                <path d="M0 0 V-15 L40 5 V20" /> {/* Back */}
+                <path d="M20 -10 V-25 L60 -5 V10" />
+              </g>
+
+              {/* Minimal Coffee Table */}
+              <g transform="translate(240, 220)">
+                <rect x="-20" y="-10" width="40" height="20" rx="4" fill="#0E3B2A" fillOpacity="0.05" transform="skewY(-20)" />
+              </g>
+
+              {/* Window Light Stream */}
+              <path d="M280 120 L320 140 L320 180 L280 160 Z" fill="white" fillOpacity="0.4" filter="blur(8px)" />
             </g>
 
-            {/* 2. TALL CABINET (Back Wall) - Grounded at rear corner */}
-            <g transform="translate(180, 125)">
-              <path d="M0 0 V-40 L25 -52 V-12 Z" /> {/* Front panel */}
-              <path d="M0 -40 L25 -52 L15 -58 L-10 -46 Z" /> {/* Top lid */}
-              <line x1="12" y1="-5" x2="12" y2="-45" strokeWidth="0.5" strokeOpacity="0.4" /> {/* Door split */}
-            </g>
-
-            {/* 3. DINING TABLE (Right Area) - Clearly on legs */}
-            <g transform="translate(200, 185)">
-              <path d="M0 0 L40 -20 L30 -25 L-10 -5 Z" /> {/* Table top */}
-              <line x1="0" y1="0" x2="0" y2="12" strokeWidth="0.6" /> {/* Front leg */}
-              <line x1="38" y1="-20" x2="38" y2="-8" strokeWidth="0.6" /> {/* Rear leg */}
-              <line x1="-8" y1="-5" x2="-8" y2="7" strokeWidth="0.6" /> {/* Side leg */}
-            </g>
-
+            {/* Highlights */}
+            <path d="M200 180 V280" stroke="#D7FF4A" strokeWidth="2" strokeOpacity="0.4" />
           </g>
 
-          {/* Window Reflection Bloom */}
-          <rect x="85" y="105" width="22" height="35" transform="skewY(24)" fill="#0E3B2A" fillOpacity="0.03" />
         </g>
-
-        {/* ── THE HORIZONTAL SCANNING BAR (A vertical line moving X) ── */}
-        <line x1="0" y1="20" x2="0" y2="220" stroke="#0E3B2A" strokeWidth="1.5" className="anim-scan-bar-h" />
+        
+        {/* Breathing Ambient Dust */}
+        {Array.from({ length: 12 }).map((_, i) => (
+          <circle
+            key={i}
+            className="potential-dust"
+            cx={100 + Math.random() * 200}
+            cy={100 + Math.random() * 200}
+            r="1"
+            fill="#0E3B2A"
+            opacity="0.1"
+          />
+        ))}
       </svg>
     </div>
   );

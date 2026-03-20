@@ -76,9 +76,9 @@ const Problem = () => {
       </div>
 
       <div className="mt-20 md:mt-24 max-w-4xl mx-auto problem-banner">
-        <div className="bg-primary/5 border border-primary/10 rounded-full py-6 md:py-8 px-8 md:px-12 text-center shadow-sm relative overflow-hidden group shrink-0">
+        <div className="bg-primary/5 border border-primary/10 rounded-[2.5rem] md:rounded-full py-6 md:py-8 px-8 md:px-12 text-center shadow-sm relative overflow-hidden group">
           <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <p className="font-heading font-bold italic text-lg md:text-2xl text-primary relative z-10 leading-tight whitespace-nowrap">
+          <p className="font-heading font-bold italic text-lg md:text-2xl text-primary relative z-10 leading-tight">
             {c.quote}
           </p>
         </div>
