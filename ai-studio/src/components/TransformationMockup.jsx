@@ -66,22 +66,22 @@ const TransformationMockup = () => {
   }, []);
 
   return (
-    <section className="bg-background py-14 px-5 lg:px-8 overflow-hidden" ref={containerRef}>
+    <section className="bg-cream py-14 px-5 lg:px-8 overflow-hidden" ref={containerRef}>
       <div className="max-w-[950px] mx-auto scale-90 lg:scale-100 origin-center">
         <div className="grid grid-cols-1 lg:grid-cols-11 gap-4 lg:gap-8 items-center">
 
           {/* Left: Photo Grid */}
           <div className="lg:col-span-4 lg:translate-y-2">
             <div className="mb-4">
-              <h4 className="font-heading font-semibold text-lg text-primary">{c.selectPhotos}</h4>
+              <h4 className="font-heading font-semibold text-lg text-silver-fern">{c.selectPhotos}</h4>
             </div>
-            <div className="bg-white p-4 rounded-[2rem] border border-black/5 shadow-premium relative">
+            <div className="bg-white p-4 rounded-[2rem] border border-silver-fern/10 shadow-premium relative">
               <div className="grid grid-cols-4 gap-2">
                 {[...Array(8)].map((_, i) => (
-                  <div key={i} className="aspect-square rounded-lg bg-primary/5 border border-primary/10 relative flex items-center justify-center overflow-hidden group">
-                    <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#0E3B2A_1px,transparent_1px)] [background-size:8px_8px]"></div>
-                    <ImageIcon className="w-4 h-4 text-primary/10" />
-                    <div className="absolute top-1 right-1 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center border border-white shadow-sm">
+                  <div key={i} className="aspect-square rounded-lg bg-silver-fern/5 border border-silver-fern/10 relative flex items-center justify-center overflow-hidden group">
+                    <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1B5E3B_1px,transparent_1px)] [background-size:8px_8px]"></div>
+                    <ImageIcon className="w-4 h-4 text-silver-fern/10" />
+                    <div className="absolute top-1 right-1 w-3.5 h-3.5 bg-silver-fern rounded-full flex items-center justify-center border border-white shadow-sm">
                       <Check className="w-2 h-2 text-white stroke-[3]" />
                     </div>
                   </div>
@@ -93,15 +93,15 @@ const TransformationMockup = () => {
           {/* Center Arrow */}
           <div className="lg:col-span-3 flex flex-col items-center justify-center py-6 lg:py-0">
             <div className="mb-2 text-center">
-              <p className="font-sans text-[9px] font-bold text-accent uppercase tracking-[0.15em] leading-tight">
+              <p className="font-sans text-[9px] font-bold text-lemon-grass uppercase tracking-[0.15em] leading-tight">
                 {c.generateLabel.split('\n').map((line, i) => <React.Fragment key={i}>{line}{i === 0 && <br />}</React.Fragment>)}
               </p>
             </div>
             <div className="relative flex items-center">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-black/5 shadow-md relative z-10">
-                <ArrowRight className="w-4 h-4 text-primary" />
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-silver-fern/10 shadow-md relative z-10">
+                <ArrowRight className="w-4 h-4 text-silver-fern" />
               </div>
-              <div className="absolute -inset-8 bg-accent/5 rounded-full blur-3xl -z-0"></div>
+              <div className="absolute -inset-8 bg-lemon-grass/5 rounded-full blur-3xl -z-0"></div>
             </div>
           </div>
 
@@ -109,55 +109,55 @@ const TransformationMockup = () => {
           <div className="lg:col-span-4 space-y-6">
             <div>
               <div className="mb-3">
-                <h4 className="font-heading font-semibold text-lg text-primary">{c.addedToListing}</h4>
+                <h4 className="font-heading font-semibold text-lg text-silver-fern">{c.addedToListing}</h4>
               </div>
-              <div ref={mockupRef} className="bg-white p-4 rounded-[2rem] shadow-premium border border-black/5 relative overflow-hidden h-[250px]">
-                <div className="ui-cursor absolute z-50 pointer-events-none text-primary opacity-0">
+              <div ref={mockupRef} className="bg-white p-4 rounded-[2rem] shadow-premium border border-silver-fern/10 relative overflow-hidden h-[250px]">
+                <div className="ui-cursor absolute z-50 pointer-events-none text-silver-fern opacity-0">
                   <MousePointer2 className="w-5 h-5 drop-shadow-md fill-white" />
                 </div>
-                <div className="aspect-[16/9] rounded-xl bg-primary/5 mb-3 relative flex items-center justify-center overflow-hidden border border-primary/5">
-                  <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(45deg,#0E3B2A_1px,transparent_1px),linear-gradient(-45deg,#0E3B2A_1px,transparent_1px)] [background-size:20px_20px]"></div>
-                  <ImageIcon className="w-6 h-6 text-primary/10" />
+                <div className="aspect-[16/9] rounded-xl bg-silver-fern/5 mb-3 relative flex items-center justify-center overflow-hidden border border-silver-fern/5">
+                  <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(45deg,#1B5E3B_1px,transparent_1px),linear-gradient(-45deg,#1B5E3B_1px,transparent_1px)] [background-size:20px_20px]"></div>
+                  <ImageIcon className="w-6 h-6 text-silver-fern/10" />
                 </div>
                 <div className="flex items-end justify-between px-1">
                   <div className="flex flex-col">
-                    <span className="font-heading font-bold italic text-[11px] text-primary leading-tight">{c.yourListing}</span>
-                    <span className="font-sans text-[10px] text-dark/60 leading-tight">{c.listingAddress}</span>
+                    <span className="font-heading font-bold italic text-[11px] text-silver-fern leading-tight">{c.yourListing}</span>
+                    <span className="font-sans text-[10px] text-pebbles/60 leading-tight">{c.listingAddress}</span>
                   </div>
-                  <button ref={buttonRef} className="ui-button bg-primary text-white px-3 py-2 rounded-lg text-[9px] font-bold shadow-sm whitespace-nowrap">
+                  <button ref={buttonRef} className="ui-button bg-silver-fern text-cream px-3 py-2 rounded-lg text-[9px] font-bold shadow-sm whitespace-nowrap">
                     {c.seePotential}
                   </button>
                 </div>
                 {/* Modal */}
-                <div className="ui-modal absolute inset-0 bg-white/98 backdrop-blur-sm z-40 p-4 flex flex-col justify-center">
-                  <div className="ui-comparison-area relative aspect-video rounded-lg overflow-hidden border border-black/10 bg-white shadow-sm">
-                    <div ref={closeRef} className="ui-close-btn absolute top-2 right-2 z-10 w-6 h-6 bg-white rounded-full flex items-center justify-center border border-black/5 shadow-md">
-                      <X className="w-3.5 h-3.5 text-primary" />
+                <div className="ui-modal absolute inset-0 bg-cream/98 backdrop-blur-sm z-40 p-4 flex flex-col justify-center">
+                  <div className="ui-comparison-area relative aspect-video rounded-lg overflow-hidden border border-silver-fern/10 bg-white shadow-sm">
+                    <div ref={closeRef} className="ui-close-btn absolute top-2 right-2 z-10 w-6 h-6 bg-white rounded-full flex items-center justify-center border border-silver-fern/5 shadow-md">
+                      <X className="w-3.5 h-3.5 text-silver-fern" />
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center bg-white">
-                      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#0E3B2A_2px,transparent_2px)] [background-size:15px_15px]"></div>
-                      <ImageIcon className="w-8 h-8 text-primary/5" />
+                      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#1B5E3B_2px,transparent_2px)] [background-size:15px_15px]"></div>
+                      <ImageIcon className="w-8 h-8 text-silver-fern/5" />
                       <div className="ui-reveal-mask absolute inset-0 overflow-hidden bg-white">
-                        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(45deg,#0E3B2A_2px,transparent_2px)] [background-size:12px_12px]"></div>
+                        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(45deg,#1B5E3B_2px,transparent_2px)] [background-size:12px_12px]"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <ImageIcon className="w-8 h-8 text-primary/10" />
+                          <ImageIcon className="w-8 h-8 text-silver-fern/10" />
                         </div>
                       </div>
                       <div ref={handleRef} className="ui-slider-handle absolute top-0 bottom-0 w-6 -ml-3 z-20 flex items-center justify-center cursor-ew-resize">
-                        <div className="w-[1px] h-full bg-accent"></div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full border border-accent shadow-premium flex items-center justify-center">
+                        <div className="w-[1px] h-full bg-lemon-grass"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full border border-lemon-grass shadow-premium flex items-center justify-center">
                           <div className="flex gap-[1px]">
-                            <div className="w-[1px] h-2.5 bg-accent"></div>
-                            <div className="w-[1px] h-2.5 bg-accent"></div>
+                            <div className="w-[1px] h-2.5 bg-lemon-grass"></div>
+                            <div className="w-[1px] h-2.5 bg-lemon-grass"></div>
                           </div>
                         </div>
                       </div>
-                      <div className="absolute bottom-2 left-2 px-1.5 py-0.5 bg-white border border-black/5 text-primary/30 rounded text-[6px] font-bold tracking-widest uppercase">before</div>
-                      <div className="absolute bottom-2 right-2 px-1.5 py-0.5 bg-accent/20 border border-accent/30 text-accent rounded text-[6px] font-bold tracking-widest uppercase">after</div>
+                      <div className="absolute bottom-2 left-2 px-1.5 py-0.5 bg-white border border-silver-fern/5 text-silver-fern/30 rounded text-[6px] font-bold tracking-widest uppercase">before</div>
+                      <div className="absolute bottom-2 right-2 px-1.5 py-0.5 bg-lemon-grass/20 border border-lemon-grass/30 text-lemon-grass rounded text-[6px] font-bold tracking-widest uppercase">after</div>
                     </div>
                   </div>
                   <div className="mt-3 text-center">
-                    <p className="font-sans text-[8px] font-bold text-primary/30 uppercase tracking-[0.2em] leading-tight">{c.upgradePreview}</p>
+                    <p className="font-sans text-[8px] font-bold text-silver-fern/30 uppercase tracking-[0.2em] leading-tight">{c.upgradePreview}</p>
                   </div>
                 </div>
               </div>
@@ -165,11 +165,11 @@ const TransformationMockup = () => {
 
             <div>
               <div className="mb-3">
-                <h4 className="font-heading font-semibold text-lg text-primary">{c.readySocial}</h4>
+                <h4 className="font-heading font-semibold text-lg text-silver-fern">{c.readySocial}</h4>
               </div>
-              <div className="bg-white p-4 rounded-[1.75rem] shadow-premium border border-black/5 flex gap-5 items-center">
-                <div className="w-[60px] aspect-[9/16] bg-primary rounded-lg overflow-hidden relative shrink-0 border border-primary shadow-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent/10 opacity-60"></div>
+              <div className="bg-white p-4 rounded-[1.75rem] shadow-premium border border-silver-fern/10 flex gap-5 items-center">
+                <div className="w-[60px] aspect-[9/16] bg-silver-fern rounded-lg overflow-hidden relative shrink-0 border border-silver-fern shadow-sm">
+                  <div className="absolute inset-0 bg-gradient-to-br from-silver-fern via-silver-fern/90 to-lemon-grass/10 opacity-60"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-7 h-7 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
                       <Play className="w-3 h-3 text-white fill-white ml-0.5" />
@@ -178,11 +178,11 @@ const TransformationMockup = () => {
                 </div>
                 <div className="flex-1 flex flex-col justify-center">
                   <div className="mb-2">
-                    <h5 className="font-heading font-bold text-[11px] text-primary leading-tight mb-0.5">{c.shortForm}</h5>
-                    <p className="font-sans text-[10px] text-dark/60 leading-tight">{c.autoReels}</p>
+                    <h5 className="font-heading font-bold text-[11px] text-silver-fern leading-tight mb-0.5">{c.shortForm}</h5>
+                    <p className="font-sans text-[10px] text-pebbles/60 leading-tight">{c.autoReels}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Video className="w-3.5 h-3.5 text-accent" />
+                    <Video className="w-3.5 h-3.5 text-lemon-grass" />
                   </div>
                 </div>
               </div>

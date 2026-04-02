@@ -5,10 +5,10 @@ import t from '../translations';
 
 const Tooltip = ({ content }) => (
   <div className="group relative inline-flex items-center justify-center cursor-help ml-2 align-middle">
-    <Info className="w-4 h-4 text-primary/40 hover:text-accent transition-colors" />
-    <div className="absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-64 p-3 bg-dark text-white text-xs font-sans rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100] pointer-events-none text-center leading-relaxed whitespace-normal drop-shadow-2xl font-normal">
+    <Info className="w-4 h-4 text-silver-fern/40 hover:text-lemon-grass transition-colors" />
+    <div className="absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-64 p-3 bg-pebbles text-cream text-xs font-sans rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100] pointer-events-none text-center leading-relaxed whitespace-normal drop-shadow-2xl font-normal">
       {content}
-      <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] w-2 h-2 bg-dark rotate-45"></div>
+      <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] w-2 h-2 bg-pebbles rotate-45"></div>
     </div>
   </div>
 );
@@ -30,47 +30,47 @@ const ComparisonTable = () => {
   ];
 
   return (
-    <section className="py-24 bg-white px-5 lg:px-10 border-t border-black/5">
+    <section className="py-24 bg-cream px-5 lg:px-10 border-t border-silver-fern/5">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="font-heading font-semibold text-2xl md:text-3xl text-primary tracking-tight">{c.heading}</h2>
+          <h2 className="font-heading font-semibold text-2xl md:text-3xl text-silver-fern tracking-tight">{c.heading}</h2>
         </div>
         <div className="overflow-x-auto pb-4">
           <table className="w-full text-left border-collapse min-w-[600px]">
             <thead>
-              <tr className="bg-neutral">
-                <th className="p-3 border-b border-black/10 font-sans font-medium text-dark/50 w-2/5">{c.features}</th>
-                <th className="p-3 border-b border-black/10 font-heading font-semibold text-primary text-center w-1/5">Minimum</th>
-                <th className="p-3 border-b border-black/10 font-heading font-semibold text-white bg-primary text-center rounded-t-xl w-1/5 shadow-md">Growth</th>
-                <th className="p-3 border-b border-black/10 font-heading font-semibold text-primary text-center w-1/5">Pro</th>
+              <tr className="bg-white/50">
+                <th className="p-3 border-b border-silver-fern/10 font-sans font-bold text-pebbles/50 w-2/5 uppercase text-[10px] tracking-widest">{c.features}</th>
+                <th className="p-3 border-b border-silver-fern/10 font-heading font-semibold text-silver-fern text-center w-1/5">Starter</th>
+                <th className="p-3 border-b border-silver-fern/10 font-heading font-semibold text-cream bg-silver-fern text-center rounded-t-xl w-1/5 shadow-md">Growth</th>
+                <th className="p-3 border-b border-silver-fern/10 font-heading font-semibold text-silver-fern text-center w-1/5">Pro</th>
               </tr>
             </thead>
             <tbody>
               {features.map((feature, idx) => (
                 <tr key={idx} className="group hover:bg-white/50 transition-colors">
-                  <td className="p-3 border-b border-black/5 font-sans text-dark/80 font-medium text-sm">
+                  <td className="p-3 border-b border-silver-fern/10 font-sans text-pebbles/80 font-medium text-sm">
                     {feature.name}
                     {feature.hasTooltip && <Tooltip content={feature.tooltipContent} />}
                   </td>
-                  <td className="p-3 border-b border-black/5 text-center">
+                  <td className="p-3 border-b border-silver-fern/10 text-center">
                     {typeof feature.min === 'boolean' ? (
-                      feature.min ? <Check className="w-4 h-4 mx-auto text-primary" /> : <Minus className="w-4 h-4 mx-auto text-dark/20" />
+                      feature.min ? <Check className="w-4 h-4 mx-auto text-lemon-grass" /> : <Minus className="w-4 h-4 mx-auto text-pebbles/20" />
                     ) : (
-                      <span className="font-mono text-[13px] text-primary font-semibold">{feature.min}</span>
+                      <span className="font-mono text-[13px] text-silver-fern font-semibold">{feature.min}</span>
                     )}
                   </td>
-                  <td className="p-3 border-b border-black/5 text-center bg-primary/5 shadow-inner">
+                  <td className="p-3 border-b border-silver-fern/10 text-center bg-silver-fern/5 shadow-inner">
                     {typeof feature.std === 'boolean' ? (
-                      feature.std ? <Check className="w-4 h-4 mx-auto text-primary" /> : <Minus className="w-4 h-4 mx-auto text-dark/20" />
+                      feature.std ? <Check className="w-4 h-4 mx-auto text-lemon-grass" /> : <Minus className="w-4 h-4 mx-auto text-pebbles/20" />
                     ) : (
-                      <span className="font-mono text-[13px] text-primary font-semibold">{feature.std}</span>
+                      <span className="font-mono text-[13px] text-silver-fern font-semibold">{feature.std}</span>
                     )}
                   </td>
-                  <td className="p-3 border-b border-black/5 text-center">
+                  <td className="p-3 border-b border-silver-fern/10 text-center">
                     {typeof feature.pro === 'boolean' ? (
-                      feature.pro ? <Check className="w-4 h-4 mx-auto text-primary" /> : <Minus className="w-4 h-4 mx-auto text-dark/20" />
+                      feature.pro ? <Check className="w-4 h-4 mx-auto text-lemon-grass" /> : <Minus className="w-4 h-4 mx-auto text-pebbles/20" />
                     ) : (
-                      <span className="font-mono text-[13px] text-primary font-semibold">{feature.pro}</span>
+                      <span className="font-mono text-[13px] text-silver-fern font-semibold">{feature.pro}</span>
                     )}
                   </td>
                 </tr>

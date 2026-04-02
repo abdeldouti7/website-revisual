@@ -30,28 +30,28 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 bg-white px-5 lg:px-10 border-t border-black/5">
+    <section className="py-24 bg-cream px-5 lg:px-10 border-t border-silver-fern/5">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="font-heading font-semibold text-3xl text-primary mb-3">{c.heading}</h2>
-          <p className="font-sans text-base text-dark/70 font-normal max-w-xl mx-auto">{c.sub}</p>
+          <h2 className="font-heading font-semibold text-3xl text-silver-fern mb-3">{c.heading}</h2>
+          <p className="font-sans text-base text-pebbles/70 font-normal max-w-xl mx-auto">{c.sub}</p>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`border border-black/5 rounded-[1.5rem] overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-background shadow-sm' : 'bg-white hover:border-black/10'}`}
+              className={`border border-silver-fern/10 rounded-[1.5rem] overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-white shadow-sm' : 'bg-white/50 hover:border-lemon-grass/20'}`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                 className="w-full flex items-center justify-between p-4 md:p-5 text-left focus:outline-none"
               >
-                <span className="font-heading font-semibold text-base md:text-lg text-primary">{faq.q}</span>
-                <ChevronDown className={`w-5 h-5 text-primary/50 transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-primary' : ''}`} />
+                <span className="font-heading font-semibold text-base md:text-lg text-silver-fern">{faq.q}</span>
+                <ChevronDown className={`w-5 h-5 text-pebbles/30 transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-silver-fern' : ''}`} />
               </button>
               <div className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="px-4 md:px-5 pb-4 md:pb-5 font-sans text-dark/70 leading-relaxed text-sm md:text-base">
+                <div className="px-4 md:px-5 pb-4 md:pb-5 font-sans text-pebbles/70 leading-relaxed text-sm md:text-base">
                   {faq.a}
                 </div>
               </div>
@@ -61,14 +61,14 @@ const FAQ = () => {
       </div>
 
       {/* Final CTA */}
-      <div className="max-w-4xl mx-auto mt-24 text-center bg-primary text-background p-10 md:p-12 rounded-[2.5rem] shadow-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 rounded-full pointer-events-none" />
+      <div className="max-w-4xl mx-auto mt-24 text-center bg-silver-fern text-cream p-10 md:p-12 rounded-[2.5rem] shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lemon-grass/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
         <div className="relative z-10 flex flex-col items-center">
-          <h2 className="font-heading font-semibold text-3xl md:text-4xl tracking-tight mb-3">{c.ctaHeading}</h2>
-          <p className="font-sans text-base md:text-lg text-background/80 font-normal max-w-xl mb-8">{c.ctaSub}</p>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl tracking-tight text-cream mb-3">{c.ctaHeading}</h2>
+          <p className="font-sans text-base md:text-lg text-cream/80 font-normal max-w-xl mb-8">{c.ctaSub}</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="magnetic-btn bg-white text-primary px-8 py-4 rounded-[2rem] font-medium text-base hover:bg-neutral transition-colors shadow-xl"
+            className="magnetic-btn bg-lemon-grass text-pebbles px-10 py-4 rounded-[2rem] font-bold text-base hover:bg-cream hover:text-silver-fern transition-all duration-300 shadow-xl"
           >
             {c.ctaBtn}
           </button>

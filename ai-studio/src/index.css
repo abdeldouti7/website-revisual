@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Urbanist';
+  src: url('./assets/fonts/Urbanist-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  src: url('./assets/fonts/Urbanist-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,11 +31,11 @@
   }
 
   body {
-    @apply bg-background text-dark font-sans font-medium antialiased;
+    @apply bg-cream text-pebbles font-sans font-medium antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight;
+    @apply font-heading text-silver-fern tracking-tight;
   }
 }
 
@@ -97,6 +113,14 @@
 }
 .animate-progress {
   animation: progress 3s ease-in-out infinite;
+}
+
+@keyframes pulse-handle {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(27, 94, 59, 0.4); transform: scale(1) translateX(-50%) translateY(-50%); }
+  50% { box-shadow: 0 0 0 12px rgba(27, 94, 59, 0); transform: scale(1.05) translateX(-50%) translateY(-50%); }
+}
+.animate-pulse-handle {
+  animation: pulse-handle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* ─────────────────────────────────────────────────────────────

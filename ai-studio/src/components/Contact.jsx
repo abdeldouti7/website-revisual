@@ -36,49 +36,49 @@ const Contact = () => {
   }, []);
 
   return (
-    <section id="contact" ref={containerRef} className="py-24 px-5 lg:px-10 max-w-7xl mx-auto border-t border-black/5">
+    <section id="contact" ref={containerRef} className="py-24 px-5 lg:px-10 max-w-7xl mx-auto border-t border-silver-fern/5 bg-cream">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
         {/* Left */}
         <div className="content-anim">
-          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-primary tracking-tight mb-5">{c.heading}</h2>
-          <p className="font-sans text-base text-dark/70 font-normal mb-10 max-w-md">{c.sub}</p>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-silver-fern tracking-tight mb-5">{c.heading}</h2>
+          <p className="font-sans text-base text-pebbles/70 font-normal mb-10 max-w-md">{c.sub}</p>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
-                <Mail className="w-5 h-5 text-primary" />
+              <div className="w-12 h-12 bg-lemon-grass-60/15 rounded-2xl flex items-center justify-center shrink-0">
+                <Mail className="w-5 h-5 text-silver-fern" />
               </div>
               <div>
-                <h4 className="font-sans font-semibold text-primary mb-1">{c.emailLabel}</h4>
-                <p className="font-sans text-dark/70 text-sm">info@revisual.be</p>
+                <h4 className="font-sans font-semibold text-silver-fern mb-1">{c.emailLabel}</h4>
+                <p className="font-sans text-pebbles/70 text-sm">info@revisual.be</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
-                <Phone className="w-5 h-5 text-primary" />
+              <div className="w-12 h-12 bg-lemon-grass-60/15 rounded-2xl flex items-center justify-center shrink-0">
+                <Phone className="w-5 h-5 text-silver-fern" />
               </div>
               <div>
-                <h4 className="font-sans font-semibold text-primary mb-1">{c.phoneLabel}</h4>
-                <p className="font-sans text-dark/70 text-sm">+32 491 555 684</p>
+                <h4 className="font-sans font-semibold text-silver-fern mb-1">{c.phoneLabel}</h4>
+                <p className="font-sans text-pebbles/70 text-sm">+32 491 555 684</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right: Form */}
-        <div className="content-anim relative bg-white p-6 lg:p-8 rounded-[2rem] shadow-sm border border-black/5 mt-8 lg:mt-0 min-h-[450px] flex flex-col justify-center">
-          <div className="absolute -top-3 right-5 lg:-top-4 lg:right-8 bg-neutral text-primary font-sans font-medium text-xs px-4 py-1.5 rounded-full shadow-sm z-10 uppercase tracking-wide border border-primary/10">
+        <div className="content-anim relative bg-white p-6 lg:p-8 rounded-[2rem] shadow-sm border border-silver-fern/10 mt-8 lg:mt-0 min-h-[450px] flex flex-col justify-center">
+          <div className="absolute -top-3 right-5 lg:-top-4 lg:right-8 bg-cream text-silver-fern font-sans font-bold text-xs px-4 py-1.5 rounded-full shadow-sm z-10 uppercase tracking-wide border border-silver-fern/20">
             {c.badge}
           </div>
 
           {status === "SUCCESS" ? (
             <div className="text-center py-10">
-              <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Send className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 bg-lemon-grass-60/15 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Send className="w-8 h-8 text-silver-fern" />
               </div>
-              <h3 className="font-heading font-semibold text-2xl text-primary mb-3">{c.successHeading}</h3>
-              <p className="font-sans text-dark/70 text-sm mb-8">{c.successMsg}</p>
-              <button onClick={() => setStatus(null)} className="font-sans text-sm font-semibold text-primary hover:underline">
+              <h3 className="font-heading font-semibold text-2xl text-silver-fern mb-3">{c.successHeading}</h3>
+              <p className="font-sans text-pebbles/70 text-sm mb-8">{c.successMsg}</p>
+              <button onClick={() => setStatus(null)} className="font-sans text-sm font-semibold text-silver-fern hover:underline">
                 {c.sendAnother}
               </button>
             </div>
@@ -90,38 +90,38 @@ const Contact = () => {
               method="POST"
             >
               <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="font-sans font-medium text-sm text-primary">{c.nameLabel}</label>
+                <label htmlFor="name" className="font-sans font-bold text-sm text-silver-fern">{c.nameLabel}</label>
                 <input
                   type="text" id="name" name="name" required
-                  className="bg-background px-4 py-3 rounded-lg border border-black/5 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-all font-sans text-dark placeholder:text-dark/30"
+                  className="bg-cream/50 px-4 py-3 rounded-xl border border-silver-fern/10 focus:outline-none focus:border-silver-fern focus:ring-1 focus:ring-silver-fern transition-all font-sans text-pebbles placeholder:text-pebbles/30"
                   placeholder="John Doe"
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="font-sans font-medium text-sm text-primary">{c.emailFieldLabel}</label>
+                <label htmlFor="email" className="font-sans font-bold text-sm text-silver-fern">{c.emailFieldLabel}</label>
                 <input
                   type="email" id="email" name="email" required
-                  className="bg-background px-4 py-3 rounded-lg border border-black/5 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-all font-sans text-dark placeholder:text-dark/30"
+                  className="bg-cream/50 px-4 py-3 rounded-xl border border-silver-fern/10 focus:outline-none focus:border-silver-fern focus:ring-1 focus:ring-silver-fern transition-all font-sans text-pebbles placeholder:text-pebbles/30"
                   placeholder="john@realestate.com"
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="font-sans font-medium text-sm text-primary">{c.messageLabel}</label>
+                <label htmlFor="message" className="font-sans font-bold text-sm text-silver-fern">{c.messageLabel}</label>
                 <textarea
                   id="message" name="message" required rows="4"
-                  className="bg-background px-4 py-3 rounded-lg border border-black/5 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-all font-sans text-dark placeholder:text-dark/30 resize-none"
+                  className="bg-cream/50 px-4 py-3 rounded-xl border border-silver-fern/10 focus:outline-none focus:border-silver-fern focus:ring-1 focus:ring-silver-fern transition-all font-sans text-pebbles placeholder:text-pebbles/30 resize-none"
                   placeholder={c.messagePlaceholder}
                 ></textarea>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <button type="submit" className="magnetic-btn w-full py-4 rounded-full font-sans font-medium text-white bg-primary hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                <button type="submit" className="magnetic-btn w-full py-4 rounded-full font-sans font-bold text-cream bg-silver-fern hover:bg-lemon-grass hover:text-pebbles transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-silver-fern/20">
                   {c.submitBtn}
                   <Send className="w-4 h-4" />
                 </button>
                 {status === "ERROR" && (
                   <p className="font-sans text-xs text-red-500 text-center font-medium">{c.errorMsg}</p>
                 )}
-                <p className="font-sans text-xs text-dark/50 text-center font-medium">{c.replyNote}</p>
+                <p className="font-sans text-xs text-pebbles/50 text-center font-medium">{c.replyNote}</p>
               </div>
             </form>
           )}

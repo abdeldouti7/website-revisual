@@ -18,7 +18,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <LanguageProvider>
-      <div className="relative w-full bg-background overflow-x-hidden selection:bg-accent selection:text-primary text-dark font-sans leading-normal">
+      <div className="relative w-full bg-cream overflow-x-hidden selection:bg-lemon-grass selection:text-pebbles text-pebbles font-sans leading-normal">
         <div className="noise-overlay"></div>
         <Navbar />
         <Hero />

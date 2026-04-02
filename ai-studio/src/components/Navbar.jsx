@@ -3,6 +3,8 @@ import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 import t from '../translations';
 
+import Logo from './Logo';
+
 const Navbar = () => {
   const navRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
@@ -36,16 +38,16 @@ const Navbar = () => {
         ref={navRef}
         className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl rounded-full px-5 py-3 transition-all duration-700 ease-in-out flex items-center justify-between ${
           scrolled
-            ? 'bg-background/90 backdrop-blur-xl border border-primary/10 shadow-lg text-primary'
-            : 'bg-white/60 backdrop-blur-md border border-black/5 text-primary'
+            ? 'bg-white/90 backdrop-blur-xl border border-silver-fern/10 shadow-lg text-silver-fern'
+            : 'bg-white/60 backdrop-blur-md border border-pebbles/5 text-silver-fern'
         }`}
       >
         {/* Logo */}
         <div
           onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
-          className="font-heading font-semibold text-lg tracking-[0.1em] uppercase cursor-pointer hover:opacity-70 transition-opacity shrink-0"
+          className="cursor-pointer hover:opacity-70 transition-opacity shrink-0 flex items-center"
         >
-          REVISUAL
+          <Logo variant="green" className="h-7 md:h-8 w-auto" />
         </div>
 
         {/* Desktop nav links */}
@@ -54,7 +56,7 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="hover-lift hover:opacity-70 transition-opacity"
+              className="hover-lift hover:text-lemon-grass transition-colors"
             >
               {item.name}
             </a>
@@ -68,8 +70,8 @@ const Navbar = () => {
             onClick={() => setLang(lang === 'en' ? 'nl' : 'en')}
             className={`font-mono font-semibold text-[12px] px-3 py-1.5 rounded-full border transition-colors ${
               scrolled
-                ? 'border-primary/20 text-primary hover:bg-primary/5'
-                : 'border-primary/30 text-primary hover:bg-primary/5'
+                ? 'border-silver-fern/20 text-silver-fern hover:bg-silver-fern/5'
+                : 'border-silver-fern/30 text-silver-fern hover:bg-silver-fern/5'
             }`}
             aria-label="Toggle language"
           >
@@ -79,17 +81,17 @@ const Navbar = () => {
             href="https://dashboard.revisual.io/login"
             target="_blank"
             rel="noopener noreferrer"
-            className={`font-sans font-medium text-[13px] px-4 py-1.5 rounded-full border transition-colors hover:opacity-70 ${
+            className={`font-sans font-medium text-[13px] px-4 py-1.5 rounded-full border transition-colors hover:text-lemon-grass ${
               scrolled
-                ? 'border-primary/20 text-primary hover:bg-primary/5'
-                : 'border-primary/30 text-primary hover:bg-primary/5'
+                ? 'border-silver-fern/20 text-silver-fern hover:bg-silver-fern/5'
+                : 'border-silver-fern/30 text-silver-fern hover:bg-silver-fern/5'
             }`}
           >
             {c.signIn}
           </a>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="magnetic-btn flex items-center justify-center px-5 py-2 rounded-full font-sans font-medium text-[13px] transition-opacity bg-primary text-white hover:opacity-90 shadow-md shadow-primary/20"
+            className="magnetic-btn flex items-center justify-center px-5 py-2 rounded-full font-sans font-medium text-[13px] transition-all duration-300 bg-silver-fern text-cream hover:bg-lemon-grass hover:text-pebbles shadow-md shadow-silver-fern/20"
           >
             <span className="relative z-10">{c.bookDemo}</span>
           </button>
@@ -98,7 +100,7 @@ const Navbar = () => {
         {/* Mobile: hamburger */}
         <button
           onClick={() => setMenuOpen(prev => !prev)}
-          className="md:hidden flex items-center justify-center w-9 h-9 rounded-full border border-primary/20 text-primary hover:bg-primary/5 transition-colors"
+          className="md:hidden flex items-center justify-center w-9 h-9 rounded-full border border-silver-fern/20 text-silver-fern hover:bg-silver-fern/5 transition-colors"
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
           {menuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -113,7 +115,7 @@ const Navbar = () => {
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-background/95 backdrop-blur-xl"
+          className="absolute inset-0 bg-cream/95 backdrop-blur-xl"
           onClick={() => setMenuOpen(false)}
         />
 
@@ -123,7 +125,7 @@ const Navbar = () => {
             <button
               key={item.name}
               onClick={() => handleNavClick(item.href)}
-              className="font-heading font-semibold text-2xl text-primary text-left hover:opacity-70 transition-opacity"
+              className="font-heading font-semibold text-2xl text-silver-fern text-left hover:text-lemon-grass transition-colors"
             >
               {item.name}
             </button>
@@ -147,7 +149,7 @@ const Navbar = () => {
             </a>
             <button
               onClick={() => handleNavClick('#contact')}
-              className="magnetic-btn px-5 py-3 rounded-full font-sans font-medium text-sm bg-primary text-white hover:opacity-90 transition-opacity shadow-md shadow-primary/20 w-full"
+              className="magnetic-btn px-5 py-3 rounded-full font-sans font-medium text-sm bg-silver-fern text-cream hover:bg-lemon-grass hover:text-pebbles transition-all duration-300 shadow-md shadow-silver-fern/20 w-full"
             >
               {c.bookDemo}
             </button>

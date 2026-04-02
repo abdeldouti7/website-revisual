@@ -34,7 +34,7 @@ const ContentGeneration = () => {
           },
           scale: 0.1, opacity: 0, duration: 0.7, stagger: 0.04, ease: "power2.in"
         })
-        .to(".video-mockup-frame", { boxShadow: "0 0 40px rgba(14, 59, 42, 0.4)", duration: 0.3, yoyo: true, repeat: 1, ease: "power2.out" }, "-=0.1")
+        .to(".video-mockup-frame", { boxShadow: "0 0 40px rgba(27, 94, 59, 0.4)", duration: 0.3, yoyo: true, repeat: 1, ease: "power2.out" }, "-=0.1")
         .to(".mockup-photo", {
           x: 0, y: 0, opacity: 1, scale: 1, duration: 1.2,
           stagger: { each: 0.08, from: "end" }, ease: "back.out(1.7)",
@@ -63,36 +63,39 @@ const ContentGeneration = () => {
   const bullets = [c.bullet1, c.bullet2, c.bullet3, c.bullet4];
 
   return (
-    <section id="content-generation" ref={containerRef} className="py-24 px-5 lg:px-10 max-w-7xl mx-auto border-t border-primary/5 bg-white overflow-hidden">
+    <section id="content-generation" ref={containerRef} className="py-24 px-5 lg:px-10 max-w-7xl mx-auto border-t border-silver-fern/5 bg-cream overflow-hidden">
       <div className="text-center mb-16 max-w-4xl mx-auto">
-        <h2 className="font-heading font-semibold text-3xl md:text-5xl text-primary tracking-tight">{c.heading}</h2>
+        <h2 className="font-heading font-semibold text-3xl md:text-5xl text-pebbles tracking-tight">{c.heading}</h2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-32">
         <div className="content-anim-left lg:col-span-5 order-2 lg:order-1">
-          <h3 className="font-heading font-semibold text-3xl md:text-4xl text-primary leading-tight mb-8">{c.subheading}</h3>
+          <h3 className="font-heading font-semibold text-3xl md:text-4xl text-pebbles leading-tight mb-8">{c.subheading}</h3>
           <div className="space-y-8 mb-12">
             <div>
-              <p className="font-sans text-sm font-bold text-accent uppercase tracking-widest mb-4">{c.formatsLabel}</p>
+              <p className="font-sans text-sm font-bold text-lemon-grass uppercase tracking-widest mb-4">{c.formatsLabel}</p>
               <ul className="space-y-4">
                 {bullets.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-4">
-                    <div className="mt-1 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
+                    <div className="mt-1 w-6 h-6 rounded-full bg-lemon-grass-60/15 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-lemon-grass" />
                     </div>
-                    <span className="font-sans text-primary/80 text-lg font-medium">{item}</span>
+                    <span className="font-sans text-pebbles/70 text-lg font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <div className="mb-10 p-6 bg-primary/5 rounded-2xl border border-primary/5 inline-block">
-            <p className="font-sans text-lg text-primary font-bold">{c.ctaBox}</p>
+          <div className="mb-10 p-6 bg-lemon-grass-60/15 rounded-2xl border border-lemon-grass-60/20 inline-block font-sans text-lg text-pebbles font-bold">
+            {c.ctaBox}
           </div>
           <div>
-            <button className="group relative inline-flex items-center justify-center px-10 py-4 font-sans text-sm font-bold tracking-[0.2em] text-white uppercase transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]">
-              <span className="absolute inset-0 rounded-full bg-primary shadow-lg shadow-primary/20"></span>
-              <span className="relative">{c.cta}</span>
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group relative inline-flex items-center justify-center px-10 py-4 font-sans text-sm font-bold tracking-[0.2em] text-cream uppercase transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
+            >
+              <span className="absolute inset-0 rounded-full bg-pebbles shadow-lg shadow-pebbles/20 hover:bg-lemon-grass transition-colors duration-300"></span>
+              <span className="relative group-hover:text-pebbles transition-colors duration-300">{c.cta}</span>
             </button>
           </div>
         </div>
@@ -123,8 +126,8 @@ const ContentGeneration = () => {
                   <div className="absolute inset-x-0 bottom-0 p-5 flex flex-col justify-end text-left h-1/2 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex flex-col gap-2 mb-2 translate-y-0">
                       <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-accent border border-white/20 flex items-center justify-center">
-                          <span className="text-[10px] font-bold text-white">R</span>
+                        <div className="w-6 h-6 rounded-full bg-lemon-grass border border-white/20 flex items-center justify-center">
+                          <span className="text-[10px] font-bold text-pebbles">R</span>
                         </div>
                         <p className="font-sans text-[11px] font-bold text-white shadow-sm">revisual.pro</p>
                       </div>
@@ -140,8 +143,8 @@ const ContentGeneration = () => {
               </div>
             </div>
             <div className="text-center mt-[-32px]">
-              <h4 className="font-heading font-semibold text-2xl text-primary mb-1">{c.video1Title}</h4>
-              <p className="font-sans text-base text-dark/70">{c.video1Desc}</p>
+              <h4 className="font-heading font-semibold text-2xl text-pebbles mb-1">{c.video1Title}</h4>
+              <p className="font-sans text-base text-pebbles/70">{c.video1Desc}</p>
             </div>
           </div>
         </div>
@@ -150,76 +153,76 @@ const ContentGeneration = () => {
       {/* Video Showcase */}
       <div className="flex flex-col md:flex-row gap-8 lg:gap-12 mb-32">
         <div className="flex-1 flex flex-col">
-          <div className="w-full aspect-video rounded-[2.5rem] overflow-hidden bg-primary/5 shadow-sm border border-primary/10 relative">
+          <div className="w-full aspect-video rounded-[2.5rem] overflow-hidden bg-silver-fern/5 shadow-sm border border-silver-fern/10 relative">
             <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
               <source src="/staging-content.mp4" type="video/mp4" />
             </video>
           </div>
           <div className="mt-8 text-center px-4">
-            <h4 className="font-heading font-semibold text-xl text-primary mb-2">{c.video2Title}</h4>
-            <p className="font-sans text-base text-dark/70 font-medium">{c.video2Desc}</p>
+            <h4 className="font-heading font-semibold text-xl text-pebbles mb-2">{c.video2Title}</h4>
+            <p className="font-sans text-base text-pebbles/70 font-medium">{c.video2Desc}</p>
           </div>
         </div>
         <div className="flex-1 flex flex-col">
-          <div className="w-full aspect-video rounded-[2.5rem] overflow-hidden bg-primary/5 shadow-sm border border-primary/10 relative">
+          <div className="w-full aspect-video rounded-[2.5rem] overflow-hidden bg-silver-fern/5 shadow-sm border border-silver-fern/10 relative">
             <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
               <source src="/renovation-content.mov" />
             </video>
           </div>
           <div className="mt-8 text-center px-4">
-            <h4 className="font-heading font-semibold text-xl text-primary mb-2">{c.video3Title}</h4>
-            <p className="font-sans text-base text-dark/70 font-medium">{c.video3Desc}</p>
+            <h4 className="font-heading font-semibold text-xl text-pebbles mb-2">{c.video3Title}</h4>
+            <p className="font-sans text-base text-pebbles/70 font-medium">{c.video3Desc}</p>
           </div>
         </div>
       </div>
 
       {/* Value Statement */}
       <div className="text-center mb-16 max-w-4xl mx-auto">
-        <h2 className="font-heading font-semibold text-3xl md:text-5xl text-primary tracking-tight text-balance mb-6">{c.tableHeading}</h2>
-        <p className="font-sans text-lg text-dark/70 leading-relaxed font-normal">{c.tableSub}</p>
+        <h2 className="font-heading font-semibold text-3xl md:text-5xl text-pebbles tracking-tight text-balance mb-6">{c.tableHeading}</h2>
+        <p className="font-sans text-lg text-pebbles/70 leading-relaxed font-normal">{c.tableSub}</p>
       </div>
 
       {/* Comparison Table */}
-      <div className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-premium border border-primary/10 overflow-hidden">
+      <div className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-premium border border-pebbles/10 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[800px]">
             <thead>
-              <tr className="border-b border-primary/10 bg-neutral">
-                <th className="py-6 px-8 font-sans font-medium text-dark/60 text-sm"></th>
-                <th className="py-6 px-8 font-sans font-semibold text-primary text-base whitespace-nowrap">{c.colInHouse}</th>
-                <th className="py-6 px-8 font-sans font-semibold text-primary text-base whitespace-nowrap">{c.colFreelance}</th>
-                <th className="py-6 px-8 font-sans font-semibold text-primary text-base whitespace-nowrap">{c.colAgency}</th>
-                <th className="py-6 px-8 font-sans font-medium text-primary text-base bg-accent/10">Revisual</th>
+              <tr className="border-b border-silver-fern/10 bg-white">
+                <th className="py-6 px-8 font-sans font-medium text-pebbles/60 text-sm"></th>
+                <th className="py-6 px-8 font-sans font-semibold text-pebbles text-base whitespace-nowrap">{c.colInHouse}</th>
+                <th className="py-6 px-8 font-sans font-semibold text-pebbles text-base whitespace-nowrap">{c.colFreelance}</th>
+                <th className="py-6 px-8 font-sans font-semibold text-pebbles text-base whitespace-nowrap">{c.colAgency}</th>
+                <th className="py-6 px-8 font-sans font-bold text-pebbles text-base bg-lemon-grass-60/15">Revisual</th>
               </tr>
             </thead>
             <tbody className="font-sans text-sm">
-              <tr className="border-b border-primary/5 hover:bg-black/[0.02] transition-colors">
-                <td className="py-6 px-8 text-primary font-medium whitespace-nowrap">{c.row1Label}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row1InHouse}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row1Freelance}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row1Agency}</td>
-                <td className="py-6 px-8 font-medium text-primary bg-accent/10 text-base">{c.row1Revisual}</td>
+              <tr className="border-b border-silver-fern/5 hover:bg-pebbles/[0.02] transition-colors">
+                <td className="py-6 px-8 text-pebbles font-medium whitespace-nowrap">{c.row1Label}</td>
+                <td className="py-6 px-8 text-pebbles/60">{c.row1InHouse}</td>
+                <td className="py-6 px-8 text-pebbles/60">{c.row1Freelance}</td>
+                <td className="py-6 px-8 text-pebbles/60">{c.row1Agency}</td>
+                <td className="py-6 px-8 font-bold text-pebbles bg-lemon-grass-60/15 text-base">{c.row1Revisual}</td>
               </tr>
-              <tr className="border-b border-primary/5 hover:bg-black/[0.02] transition-colors">
-                <td className="py-6 px-8 text-primary font-medium whitespace-nowrap">{c.row2Label}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row2InHouse}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row2Freelance}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row2Agency}</td>
-                <td className="py-6 px-8 font-medium text-primary bg-accent/10 text-base">{c.row2Revisual}</td>
+              <tr className="border-b border-silver-fern/5 hover:bg-pebbles/[0.02] transition-colors">
+                <td className="py-6 px-8 text-pebbles font-medium whitespace-nowrap">{c.row2Label}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row2InHouse}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row2Freelance}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row2Agency}</td>
+                <td className="py-6 px-8 font-bold text-pebbles bg-lemon-grass-60/15 text-base">{c.row2Revisual}</td>
               </tr>
-              <tr className="border-b border-primary/5 hover:bg-black/[0.02] transition-colors">
-                <td className="py-6 px-8 text-primary font-medium whitespace-nowrap">{c.row3Label}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row3InHouse}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row3Freelance}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row3Agency}</td>
-                <td className="py-6 px-8 font-medium text-primary bg-accent/10 text-base">{c.row3Revisual}</td>
+              <tr className="border-b border-silver-fern/5 hover:bg-pebbles/[0.02] transition-colors">
+                <td className="py-6 px-8 text-pebbles font-medium whitespace-nowrap">{c.row3Label}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row3InHouse}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row3Freelance}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row3Agency}</td>
+                <td className="py-6 px-8 font-bold text-pebbles bg-lemon-grass-60/15 text-base">{c.row3Revisual}</td>
               </tr>
-              <tr className="hover:bg-black/[0.02] transition-colors">
-                <td className="py-6 px-8 text-primary font-medium whitespace-nowrap">{c.row4Label}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row4InHouse}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row4Freelance}</td>
-                <td className="py-6 px-8 text-dark/70">{c.row4Agency}</td>
-                <td className="py-6 px-8 font-medium text-primary bg-accent/10 text-base">{c.row4Revisual}</td>
+              <tr className="hover:bg-pebbles/[0.02] transition-colors">
+                <td className="py-6 px-8 text-pebbles font-medium whitespace-nowrap">{c.row4Label}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row4InHouse}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row4Freelance}</td>
+                <td className="py-6 px-8 text-pebbles/70">{c.row4Agency}</td>
+                <td className="py-6 px-8 font-bold text-pebbles bg-lemon-grass-60/15 text-base">{c.row4Revisual}</td>
               </tr>
             </tbody>
           </table>
@@ -227,7 +230,7 @@ const ContentGeneration = () => {
       </div>
 
       <div className="text-center mt-12">
-        <p className="font-sans text-xl text-primary font-medium tracking-tight">{c.footer}</p>
+        <p className="font-sans text-xl text-pebbles font-medium tracking-tight">{c.footer}</p>
       </div>
     </section>
   );

@@ -18,25 +18,25 @@ const Pricing = () => {
   const c = t[lang].pricing;
 
   return (
-    <section id="pricing" className="py-24 bg-white px-4 lg:px-8 relative z-10 border-t border-black/5">
+    <section id="pricing" className="py-24 bg-cream px-4 lg:px-8 relative z-10 border-t border-silver-fern/5">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10 flex flex-col items-center">
-          <h2 className="font-heading font-semibold text-2xl md:text-3xl text-primary tracking-tight mb-2">{c.heading}</h2>
-          <p className="font-sans text-[15px] md:text-base text-dark/70 max-w-xl font-normal">{c.sub}</p>
+          <h2 className="font-heading font-semibold text-2xl md:text-3xl text-silver-fern tracking-tight mb-2">{c.heading}</h2>
+          <p className="font-sans text-[15px] md:text-base text-pebbles/70 max-w-xl font-normal">{c.sub}</p>
         </div>
 
         {/* ROW 1: CORE PACKS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mb-8">
 
           {/* Starter */}
-          <div className="bg-neutral p-5 lg:p-6 rounded-2xl border border-black/5 hover-lift flex flex-col">
-            <h3 className="font-mono text-lg tracking-widest text-dark/50 uppercase font-semibold mb-3">Starter</h3>
-            <div className="flex flex-col gap-1 mb-6 pb-5 border-b border-black/5">
-              <span className="text-dark/50 font-sans text-xs">{c.startingFrom}</span>
-              <span className="font-heading font-semibold text-3xl text-primary">€99 <span className="text-sm font-sans text-dark/50 font-normal">{c.perMonth}</span></span>
-              <span className="text-dark/50 font-sans text-xs mt-1">{c.startingFrom5}</span>
+          <div className="bg-white p-5 lg:p-6 rounded-2xl border border-silver-fern/10 hover-lift flex flex-col">
+            <h3 className="font-mono text-lg tracking-widest text-silver-fern/50 uppercase font-semibold mb-3">Starter</h3>
+            <div className="flex flex-col gap-1 mb-6 pb-5 border-b border-silver-fern/5">
+              <span className="text-pebbles/50 font-sans text-xs">{c.startingFrom}</span>
+              <span className="font-heading font-semibold text-3xl text-silver-fern">€99 <span className="text-sm font-sans text-pebbles/50 font-normal">{c.perMonth}</span></span>
+              <span className="text-pebbles/50 font-sans text-xs mt-1">{c.startingFrom5}</span>
             </div>
-            <h4 className="font-heading font-semibold text-base text-primary mb-4">{c.whatDoYouGet}</h4>
+            <h4 className="font-heading font-semibold text-base text-silver-fern mb-4">{c.whatDoYouGet}</h4>
             <div className="mb-5">
               <h5 className="font-sans text-xs font-semibold text-dark/50 uppercase tracking-wider mb-2">{c.perProperty}</h5>
               <div className="font-sans text-dark flex flex-col gap-1 text-[13px] md:text-sm">
@@ -48,29 +48,29 @@ const Pricing = () => {
             <div className="mb-8 flex-1">
               <h5 className="font-sans text-xs font-semibold text-dark/50 uppercase tracking-wider mb-2">{c.included}</h5>
               <ul className="space-y-2 font-sans text-dark/80 text-[13px] leading-snug">
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> <span className="flex-1">Virtual Renovation</span></li>
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> <span className="flex-1">Virtual Staging</span></li>
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> <span className="flex-1">Virtual Optimization</span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex-1">Virtual Renovation</span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex-1">Virtual Staging</span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex-1">Virtual Optimization</span></li>
               </ul>
             </div>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full py-2.5 rounded-full font-sans text-sm font-medium text-primary border-2 border-primary hover:bg-primary/5 transition-colors mt-auto"
+              className="w-full py-2.5 rounded-full font-sans text-sm font-medium text-silver-fern border-2 border-silver-fern hover:bg-cream transition-colors mt-auto"
             >
               {c.selectStarter}
             </button>
           </div>
 
           {/* Growth (Featured) */}
-          <div className="bg-primary p-5 lg:p-6 rounded-2xl shadow-xl relative transform md:scale-[1.03] z-10 hover-lift flex flex-col border border-accent/20">
-            <div className="absolute top-0 right-5 -translate-y-1/2 bg-accent text-white px-3 py-1 rounded-full text-[9px] font-medium uppercase tracking-wider shadow-md">{c.mostPopular}</div>
+          <div className="bg-silver-fern p-5 lg:p-6 rounded-2xl shadow-xl relative transform md:scale-[1.03] z-10 hover-lift flex flex-col border border-lemon-grass/20">
+            <div className="absolute top-0 right-5 -translate-y-1/2 bg-lemon-grass text-pebbles px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider shadow-md">{c.mostPopular}</div>
             <h3 className="font-mono text-lg tracking-widest text-white/50 uppercase font-semibold mb-3">Growth</h3>
             <div className="flex flex-col gap-1 mb-6 pb-5 border-b border-white/10">
               <span className="text-white/50 font-sans text-xs">{c.startingFrom}</span>
-              <span className="font-heading font-semibold text-4xl text-white">€145 <span className="text-sm font-sans text-white/50 font-normal">{c.perMonth}</span></span>
+              <span className="font-heading font-semibold text-4xl text-cream">€145 <span className="text-sm font-sans text-white/50 font-normal">{c.perMonth}</span></span>
               <span className="text-white/50 font-sans text-xs mt-1">{c.startingFrom5}</span>
             </div>
-            <h4 className="font-heading font-semibold text-base text-white mb-4">{c.whatDoYouGet}</h4>
+            <h4 className="font-heading font-semibold text-base text-cream mb-4">{c.whatDoYouGet}</h4>
             <div className="mb-5">
               <h5 className="font-sans text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">{c.perProperty}</h5>
               <div className="font-sans text-white flex flex-col gap-1 text-[13px] md:text-sm">
@@ -82,28 +82,28 @@ const Pricing = () => {
             <div className="mb-8 flex-1">
               <h5 className="font-sans text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">{c.included}</h5>
               <ul className="space-y-2 font-sans text-white/90 text-[13px] leading-snug">
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-white shrink-0 mt-[1px]" /> <span className="flex-1">{c.everythingStarter}</span></li>
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-white shrink-0 mt-[1px]" /> <span className="flex items-center">Buyer Analytics <Tooltip content="Understand real buyer interest through data. See which styles, rooms, and properties attract the most attention and engagement." /></span></li>
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-white shrink-0 mt-[1px]" /> <span className="flex items-center break-words">Property presentation document <Tooltip content="A hybrid presentation document for property viewings, available in both digital and physical format, allowing agents to present the property professionally and leave it behind with clients." /></span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex-1">{c.everythingStarter}</span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex items-center">Buyer Analytics <Tooltip content="Understand real buyer interest through data. See which styles, rooms, and properties attract the most attention and engagement." /></span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex items-center break-words">Property presentation document <Tooltip content="A hybrid presentation document for property viewings, available in both digital and physical format, allowing agents to present the property professionally and leave it behind with clients." /></span></li>
               </ul>
             </div>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="magnetic-btn w-full py-2.5 rounded-full font-sans text-sm font-medium text-primary bg-white hover:bg-neutral transition-colors mt-auto shadow-sm"
+              className="magnetic-btn w-full py-2.5 rounded-full font-sans text-sm font-bold text-pebbles bg-lemon-grass hover:bg-lemon-grass-60 transition-all duration-300 mt-auto shadow-sm"
             >
               {c.selectGrowth}
             </button>
           </div>
 
           {/* Pro */}
-          <div className="bg-neutral p-5 lg:p-6 rounded-2xl border border-black/5 hover-lift flex flex-col">
-            <h3 className="font-mono text-lg tracking-widest text-dark/50 uppercase font-semibold mb-3">Pro</h3>
-            <div className="flex flex-col gap-1 mb-6 pb-5 border-b border-black/5">
-              <span className="text-dark/50 font-sans text-xs">{c.startingFrom}</span>
-              <span className="font-heading font-semibold text-3xl text-primary">€225 <span className="text-sm font-sans text-dark/50 font-normal">{c.perMonth}</span></span>
-              <span className="text-dark/50 font-sans text-xs mt-1">{c.startingFrom5}</span>
+          <div className="bg-white p-5 lg:p-6 rounded-2xl border border-silver-fern/10 hover-lift flex flex-col">
+            <h3 className="font-mono text-lg tracking-widest text-silver-fern/50 uppercase font-semibold mb-3">Pro</h3>
+            <div className="flex flex-col gap-1 mb-6 pb-5 border-b border-silver-fern/5">
+              <span className="text-pebbles/50 font-sans text-xs">{c.startingFrom}</span>
+              <span className="font-heading font-semibold text-3xl text-silver-fern">€225 <span className="text-sm font-sans text-pebbles/50 font-normal">{c.perMonth}</span></span>
+              <span className="text-pebbles/50 font-sans text-xs mt-1">{c.startingFrom5}</span>
             </div>
-            <h4 className="font-heading font-semibold text-base text-primary mb-4">{c.whatDoYouGet}</h4>
+            <h4 className="font-heading font-semibold text-base text-silver-fern mb-4">{c.whatDoYouGet}</h4>
             <div className="mb-5">
               <h5 className="font-sans text-xs font-semibold text-dark/50 uppercase tracking-wider mb-2">{c.perProperty}</h5>
               <div className="font-sans text-dark flex flex-col gap-1 text-[13px] md:text-sm">
@@ -115,15 +115,15 @@ const Pricing = () => {
             <div className="mb-8 flex-1">
               <h5 className="font-sans text-xs font-semibold text-dark/50 uppercase tracking-wider mb-2">{c.included}</h5>
               <ul className="space-y-2 font-sans text-dark/80 text-[13px] leading-snug">
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> <span className="flex-1">{c.everythingGrowth}</span></li>
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> <span className="flex items-center break-words">Investment Scenario Calculator <Tooltip content="Simulate renovation costs, projected returns, and long-term property value scenarios to support investment decisions." /></span></li>
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> <span className="flex items-center break-words">Lead Qualification &amp; Follow-up <Tooltip content="Track visitor interactions, identify warm leads, and automate follow-ups to focus on the most promising buyers." /></span></li>
-                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> <span className="flex items-center break-words">Custom branded solution <Tooltip content="Receive a branded solution of our product tailored to your real estate team, allowing you to present the experience under your own brand." /></span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex-1">{c.everythingGrowth}</span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex items-center break-words">Investment Scenario Calculator <Tooltip content="Simulate renovation costs, projected returns, and long-term property value scenarios to support investment decisions." /></span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex items-center break-words">Lead Qualification &amp; Follow-up <Tooltip content="Track visitor interactions, identify warm leads, and automate follow-ups to focus on the most promising buyers." /></span></li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> <span className="flex items-center break-words">Custom branded solution <Tooltip content="Receive a branded solution of our product tailored to your real estate team, allowing you to present the experience under your own brand." /></span></li>
               </ul>
             </div>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full py-2.5 rounded-full font-sans text-sm font-medium text-primary border-2 border-primary hover:bg-primary/5 transition-colors mt-auto"
+              className="w-full py-2.5 rounded-full font-sans text-sm font-medium text-silver-fern border-2 border-silver-fern hover:bg-cream transition-colors mt-auto"
             >
               {c.selectPro}
             </button>
@@ -134,48 +134,48 @@ const Pricing = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pt-4 w-full">
 
           {/* Content Bundles */}
-          <div className="bg-white p-5 lg:p-6 rounded-2xl border border-black/5 hover-lift md:col-span-2 flex flex-col">
+          <div className="bg-white p-5 lg:p-6 rounded-2xl border border-pebbles/10 hover-lift md:col-span-2 flex flex-col">
             <div className="text-center mb-6">
-              <h3 className="font-heading font-semibold text-xl md:text-2xl text-primary mb-2">{c.contentBundlesHeading}</h3>
-              <p className="font-sans text-sm text-dark/70 font-normal">{c.contentBundlesSub}</p>
+              <h3 className="font-heading font-semibold text-xl md:text-2xl text-pebbles mb-2">{c.contentBundlesHeading}</h3>
+              <p className="font-sans text-sm text-pebbles/70 font-normal">{c.contentBundlesSub}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
               <div className="flex flex-col h-full">
-                <h4 className="font-heading font-semibold text-lg text-primary mb-5">{c.chooseVolume}</h4>
+                <h4 className="font-heading font-semibold text-lg text-pebbles mb-5">{c.chooseVolume}</h4>
                 <div className="space-y-3 mb-5 relative">
                   <div className="flex justify-between items-center py-3 border-b border-black/5">
                     <div>
-                      <div className="font-sans text-sm text-dark font-semibold">{c.posts10}</div>
-                      <div className="font-sans text-[11px] text-dark/50">{c.freq10}</div>
+                      <div className="font-sans text-sm text-pebbles font-semibold">{c.posts10}</div>
+                      <div className="font-sans text-[11px] text-pebbles/50">{c.freq10}</div>
                     </div>
                   </div>
-                  <div className="flex justify-between items-center py-4 px-3 -mx-3 border border-accent/20 bg-accent/5 rounded-xl relative shadow-sm">
-                    <div className="absolute -top-3 left-3 bg-accent text-white px-2.5 py-0.5 rounded-full text-[9px] font-medium uppercase tracking-wider shadow-sm">{c.mostPopular}</div>
+                  <div className="flex justify-between items-center py-4 px-3 -mx-3 border border-lemon-grass/20 bg-lemon-grass/5 rounded-xl relative shadow-sm">
+                    <div className="absolute -top-3 left-3 bg-lemon-grass text-pebbles px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider shadow-sm">{c.mostPopular}</div>
                     <div>
-                      <div className="font-sans text-sm text-dark font-semibold">{c.posts20}</div>
-                      <div className="font-sans text-[11px] text-dark/50">{c.freq20}</div>
+                      <div className="font-sans text-sm text-pebbles font-semibold">{c.posts20}</div>
+                      <div className="font-sans text-[11px] text-pebbles/50">{c.freq20}</div>
                     </div>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-black/5">
                     <div>
-                      <div className="font-sans text-sm text-dark font-semibold">{c.posts40}</div>
-                      <div className="font-sans text-[11px] text-dark/50">{c.freq40}</div>
+                      <div className="font-sans text-sm text-pebbles font-semibold">{c.posts40}</div>
+                      <div className="font-sans text-[11px] text-pebbles/50">{c.freq40}</div>
                     </div>
                   </div>
                 </div>
-                <p className="font-sans text-xs text-dark/50 italic mt-auto pt-2">{c.generatedFrom}</p>
+                <p className="font-sans text-xs text-pebbles/50 italic mt-auto pt-2">{c.generatedFrom}</p>
               </div>
               <div className="flex flex-col h-full">
-                <h4 className="font-heading font-semibold text-lg text-primary mb-5">{c.whatsIncluded}</h4>
-                <ul className="space-y-3 font-sans text-dark/80 text-sm mb-6">
-                  <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> {c.inc1}</li>
-                  <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> {c.inc2}</li>
-                  <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> {c.inc3}</li>
-                  <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-primary shrink-0 mt-[1px]" /> {c.inc4}</li>
+                <h4 className="font-heading font-semibold text-lg text-pebbles mb-5">{c.whatsIncluded}</h4>
+                <ul className="space-y-3 font-sans text-pebbles/80 text-sm mb-6">
+                  <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> {c.inc1}</li>
+                  <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> {c.inc2}</li>
+                  <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> {c.inc3}</li>
+                  <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-lemon-grass shrink-0 mt-[1px]" /> {c.inc4}</li>
                 </ul>
                 <button
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="magnetic-btn w-full py-2.5 rounded-full font-sans text-sm font-medium text-white bg-primary hover:opacity-90 transition-opacity mt-auto shadow-sm shadow-primary/20"
+                  className="magnetic-btn w-full py-2.5 rounded-full font-sans text-sm font-medium text-cream bg-pebbles hover:bg-lemon-grass hover:text-pebbles transition-all duration-300 mt-auto shadow-sm shadow-pebbles/20"
                 >
                   {c.upgradeContent}
                 </button>
@@ -184,14 +184,14 @@ const Pricing = () => {
           </div>
 
           {/* Custom Solutions */}
-          <div className="bg-neutral p-5 lg:p-6 rounded-2xl border border-black/5 hover-lift md:col-span-1 flex flex-col justify-between">
+          <div className="bg-white p-5 lg:p-6 rounded-2xl border border-silver-fern/10 hover-lift md:col-span-1 flex flex-col justify-between">
             <div>
-              <h3 className="font-heading font-semibold text-lg md:text-xl text-primary mb-2">{c.customSolutionsTitle}</h3>
-              <p className="font-sans text-[13px] md:text-sm text-dark/70 mb-5 font-normal">{c.customSolutionsSub}</p>
+              <h3 className="font-heading font-semibold text-lg md:text-xl text-silver-fern mb-2">{c.customSolutionsTitle}</h3>
+              <p className="font-sans text-[13px] md:text-sm text-pebbles/70 mb-5 font-normal">{c.customSolutionsSub}</p>
             </div>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full py-2.5 rounded-full font-sans text-sm font-medium text-primary border-2 border-primary hover:bg-primary/5 transition-colors mt-auto"
+              className="w-full py-2.5 rounded-full font-sans text-sm font-medium text-silver-fern border-2 border-silver-fern hover:bg-cream transition-colors mt-auto"
             >
               {c.contactSales}
             </button>

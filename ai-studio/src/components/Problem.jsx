@@ -44,41 +44,41 @@ const Problem = () => {
     <section
       id="problem"
       ref={sectionRef}
-      className="py-12 lg:py-24 px-5 lg:px-10 max-w-7xl mx-auto overflow-hidden bg-white"
+      className="py-12 lg:py-24 px-5 lg:px-10 max-w-7xl mx-auto overflow-hidden bg-cream"
     >
       <div className="text-center mb-16 problem-title">
-        <h2 className="font-heading font-bold text-3xl md:text-5xl text-primary tracking-tight max-w-3xl mx-auto leading-[1.1]">
-          {c.heading1}<span className="italic font-serif text-primary/70">{c.heading2}</span>
+        <h2 className="font-heading font-bold text-3xl md:text-5xl text-silver-fern tracking-tight max-w-3xl mx-auto leading-[1.1]">
+          {c.heading1}<span className="italic font-serif text-silver-fern/70">{c.heading2}</span>
         </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
         {cards.map(({ img, imgAlt, Icon, title, body }, i) => (
           <div key={i} ref={el => cardsRef.current[i] = el} className="group flex flex-col items-start">
-            <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden mb-8 shadow-2xl shadow-black/5 border border-black/5 relative">
+            <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden mb-8 shadow-2xl shadow-black/5 border border-silver-fern/10 relative">
               <img src={img} alt={imgAlt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-silver-fern/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
             <div className="flex items-center gap-4 mb-5">
-              <div className="w-12 h-12 bg-primary/5 rounded-2xl flex items-center justify-center border border-primary/10 relative shrink-0">
-                <Icon className="w-5 h-5 text-primary" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full border-2 border-white shadow-sm animate-pulse"></div>
+              <div className="w-12 h-12 bg-lemon-grass-60/15 rounded-2xl flex items-center justify-center border border-silver-fern/10 relative shrink-0">
+                <Icon className="w-5 h-5 text-silver-fern" />
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-lemon-grass rounded-full border-2 border-cream shadow-sm animate-pulse"></div>
               </div>
-              <h3 className="font-heading font-bold text-2xl text-primary leading-tight">
+              <h3 className="font-heading font-bold text-2xl text-silver-fern leading-tight">
                 {title.split('\n').map((line, j) => (
                   <React.Fragment key={j}>{line}{j < title.split('\n').length - 1 && <br />}</React.Fragment>
                 ))}
               </h3>
             </div>
-            <p className="font-sans text-[16px] text-dark/60 leading-relaxed font-medium">{body}</p>
+            <p className="font-sans text-[16px] text-pebbles/70 leading-relaxed font-medium">{body}</p>
           </div>
         ))}
       </div>
 
       <div className="mt-20 md:mt-24 max-w-4xl mx-auto problem-banner">
-        <div className="bg-primary/5 border border-primary/10 rounded-[2.5rem] md:rounded-full py-6 md:py-8 px-8 md:px-12 text-center shadow-sm relative overflow-hidden group">
-          <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <p className="font-heading font-bold italic text-lg md:text-2xl text-primary relative z-10 leading-tight">
+        <div className="bg-lemon-grass-60/10 border border-silver-fern/10 rounded-[2.5rem] md:rounded-full py-6 md:py-8 px-8 md:px-12 text-center shadow-sm relative overflow-hidden group">
+          <div className="absolute inset-0 bg-lemon-grass-60/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <p className="font-heading font-bold italic text-lg md:text-2xl text-silver-fern relative z-10 leading-tight">
             {c.quote}
           </p>
         </div>

@@ -7,17 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0E3B2A',     // Deep Green
-        accent: '#0E3B2A',      // Deep Green Accent
-        background: '#FFFFFF',  // Pure White
-        neutral: '#F5F3EE',     // Light Beige / Warm Grey
-        dark: '#111111',        // Dark Charcoal
+        'silver-fern': '#1B5E3B',    // Primary brand green
+        'lemon-grass': '#8CCF3F',    // Secondary accent green
+        'lemon-grass-60': '#A9D27E', // Supporting soft green
+        'cream': '#F3EFE6',         // Neutral warm background
+        'pebbles': '#1F2F2F',       // Dark accent / body text
+        
+        // Aliases for easier migration if needed
+        primary: '#1B5E3B',
+        accent: '#8CCF3F',
+        background: '#F3EFE6',
+        neutral: '#FFFFFF',          // Use white for elevated elements as per prompt
+        dark: '#1F2F2F',
       },
       fontFamily: {
-        heading: ['Inter', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
-        drama: ['"Instrument Serif"', 'serif'],
-        mono: ['"Fira Code"', 'monospace'],
+        heading: ['Urbanist', 'sans-serif'],
+        sans: ['Urbanist', 'Inter', 'sans-serif'],
+        drama: ['Urbanist', 'serif'],
+        mono: ['Urbanist', 'monospace'],
+        serif: ['Urbanist', 'serif'],
       },
     },
   },

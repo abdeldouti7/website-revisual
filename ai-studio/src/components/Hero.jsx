@@ -65,7 +65,7 @@ const Hero = () => {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-background"
+      className="relative w-full overflow-hidden bg-cream"
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
@@ -74,7 +74,7 @@ const Hero = () => {
           alt="Cinematic architectural space"
           className="w-full h-full object-cover scale-105 opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/95 to-cream/40" />
       </div>
 
       {/* Main content — responsive grid */}
@@ -98,7 +98,7 @@ const Hero = () => {
               </span>
               <span
                 ref={el => elementsRef.current[2] = el}
-                className="font-drama italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary mt-2 leading-[0.92]"
+                className="font-drama italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-lemon-grass mt-2 leading-[0.92]"
               >
                 {c.line3}<br />{c.line4}
               </span>
@@ -106,7 +106,7 @@ const Hero = () => {
 
             <p
               ref={el => elementsRef.current[3] = el}
-              className="mt-6 text-primary/80 font-sans text-base md:text-lg max-w-lg font-normal"
+              className="mt-6 text-pebbles/70 font-sans text-base md:text-lg max-w-lg font-normal"
             >
               {c.sub}
             </p>
@@ -117,13 +117,13 @@ const Hero = () => {
             >
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="magnetic-btn bg-primary text-white px-7 py-3.5 rounded-[2rem] font-medium text-base hover:opacity-90 transition-opacity shadow-lg shadow-primary/20 w-full sm:w-auto text-center"
+                className="magnetic-btn bg-silver-fern text-cream px-7 py-3.5 rounded-[2rem] font-medium text-base hover:bg-lemon-grass hover:text-pebbles transition-all duration-300 shadow-lg shadow-silver-fern/20 w-full sm:w-auto text-center"
               >
                 {c.ctaPrimary}
               </button>
               <button
                 onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
-                className="magnetic-btn bg-white border-2 border-primary text-primary px-7 py-3.5 rounded-[2rem] font-medium text-base flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors w-full sm:w-auto"
+                className="magnetic-btn bg-white border-2 border-silver-fern text-silver-fern px-7 py-3.5 rounded-[2rem] font-medium text-base flex items-center justify-center gap-2 hover:bg-cream transition-colors w-full sm:w-auto"
               >
                 {c.ctaSecondary}
               </button>
@@ -162,13 +162,13 @@ const Hero = () => {
                 {/* Slider line */}
                 <div
                   ref={sliderRef}
-                  className="absolute top-0 bottom-0 w-[1px] bg-accent/80 shadow-[0_0_10px_rgba(245,158,11,0.8)] z-20"
+                  className="absolute top-0 bottom-0 w-[1px] bg-lemon-grass/80 shadow-[0_0_10px_rgba(140,207,63,0.8)] z-20"
                   style={{ left: '0%' }}
                 >
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white border-2 border-accent rounded-full shadow-lg flex items-center justify-center backdrop-blur-sm">
                     <div className="flex gap-1">
-                      <div className="w-0.5 h-3 bg-accent rounded-full" />
-                      <div className="w-0.5 h-3 bg-accent rounded-full" />
+                      <div className="w-0.5 h-3 bg-lemon-grass rounded-full" />
+                      <div className="w-0.5 h-3 bg-lemon-grass rounded-full" />
                     </div>
                   </div>
                 </div>
