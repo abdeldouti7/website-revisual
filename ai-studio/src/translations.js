@@ -75,7 +75,7 @@ const t = {
 
     // CONTENT GENERATION
     content: {
-      heading: 'Receive ready-to-post property content every week',
+      heading: 'Receive ready-to-post property content',
       subheading: 'We turn your listings into engaging video content',
       formatsLabel: 'Various property video formats:',
       bullet1: 'Help buyers feel the property before visiting',
@@ -367,7 +367,7 @@ const t = {
 
     // CONTENT GENERATION
     content: {
-      heading: 'Ontvang elke week kant-en-klare vastgoedcontent',
+      heading: 'Ontvang kant-en-klare vastgoedcontent',
       subheading: 'Wij zetten je listings om in aantrekkelijke videocontent',
       formatsLabel: 'Verschillende vastgoedvideoformats:',
       bullet1: 'Laat kopers het pand al voelen vóór het bezoek',

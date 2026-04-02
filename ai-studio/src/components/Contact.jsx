@@ -50,7 +50,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-sans font-semibold text-primary mb-1">{c.emailLabel}</h4>
-                <p className="font-sans text-dark/70 text-sm">revisual.be@gmail.com</p>
+                <p className="font-sans text-dark/70 text-sm">info@revisual.be</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
