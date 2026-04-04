@@ -12,11 +12,10 @@ const t = {
 
     // HERO
     hero: {
-      line1: 'Sell properties',
-      line2: 'faster by showing',
-      line3: 'their true',
-      line4: 'potential.',
-      sub: "Help buyers instantly understand what a property can become.",
+      line1: 'The smarter way',
+      line2: 'to create',
+      line3: 'property visuals.',
+      sub: "Create interactive visuals faster, simpler, and at scale across your listings.",
       ctaPrimary: 'Upgrade your properties',
       ctaSecondary: 'See our solutions',
       beforeLabel: 'Before',
@@ -42,13 +41,13 @@ const t = {
         title: "Buyers see a project,\nnot a home",
         body: "Outdated or unfinished spaces make buyers think about renovation work, time, and costs. Instead of imagining living there, they see effort and investment.",
       },
-      quote: "\"When buyers can't see the potential, they don't inquire.\"",
+      quote: "\"When properties are hard to imagine, buyers hesitate\"",
     },
 
     // INTERACTIVE DEMO / VALUE
     demo: {
-      heading1: 'See the potential',
-      headingItalic: 'instantly',
+      heading1: 'Turn listings into',
+      headingItalic: 'interactive buyer experiences',
       sub: "Instantly reveal a property's potential without adding work for your team.",
       styleModern: 'Modern',
       styleJapandi: 'Japandi',
@@ -60,11 +59,11 @@ const t = {
       vsDesc: 'Adds realistic furniture and styling to empty spaces so buyers can imagine living there.',
       vrTitle: 'Virtual Renovation',
       vrDesc: 'Shows a renovated version of outdated interiors without physical construction.',
-      rightHeading: 'From uncertainty to clear value',
-      benefit1: 'More qualified buyer inquiries',
-      benefit2: 'Less price pressure during negotiations',
-      benefit3: 'Faster sales for empty or outdated properties',
-      benefit4: 'Avoid thousands in negotiation losses caused by poor presentations.',
+      rightHeading: 'Seamlessly integrated into your workflow',
+      benefit1: '<strong>More inquiries</strong>, <strong>faster sales</strong>, <strong>stronger negotiations</strong>',
+      benefit2: '<strong>Multiple styles</strong> to match different buyer preferences',
+      benefit3: '<strong>Dozens of realistic visuals</strong> in the time of one',
+      benefit4: 'Turn uncertainty into <strong>clear property value</strong>',
       stat: "81% of buyers say staging helps visualize a property's potential",
       statSource: '— National Association of Realtors',
       desc: 'Automatically add Revisuals (visual upgrades) to your listings with an interactive slider.',
@@ -75,15 +74,15 @@ const t = {
 
     // CONTENT GENERATION
     content: {
-      heading: 'Receive ready-to-post property content',
-      subheading: 'We turn your listings into engaging video content',
-      formatsLabel: 'Various property video formats:',
-      bullet1: 'Help buyers feel the property before visiting',
-      bullet2: 'Quick property teaser videos',
-      bullet3: 'Highlight the best spaces and features',
-      bullet4: 'Make listings more engaging',
-      ctaBox: 'Attract more buyer attention with property videos.',
-      cta: 'Get video content',
+      heading: 'Turn every listing into video content',
+      subheading: 'Receive ready-to-post<br />videos automatically',
+      formatsLabel: 'Video content ready for every channel',
+      bullet1: '<strong>Ready-to-post videos</strong> for every listing',
+      bullet2: '<strong>Multiple formats</strong> for social, portals, and campaigns',
+      bullet3: '<strong>Consistent content</strong> across all properties',
+      bullet4: '<strong>No editing</strong>, no coordination, no delays',
+      ctaBox: 'More visibility for your listings, without extra work',
+      cta: 'Generate video content',
       video1Title: 'Property highlight video',
       video1Desc: "Give buyers a quick feel for the property's best spaces.",
       video2Title: 'Virtual Staging Content',
@@ -122,7 +121,7 @@ const t = {
     howItWorks: {
       heading: 'Revisual in 60 seconds',
       step1num: '01',
-      step1title: 'Select your photos',
+      step1title: 'Select your photos or add listing link',
       step1desc: 'Upload or select the property photos you want to transform.',
       step2num: '02',
       step2title: 'Choose your styles and click done',
@@ -161,10 +160,10 @@ const t = {
       card2b1: '<strong>Photorealistic visuals</strong> powered by advanced AI',
       card2b2: "Help buyers <strong>instantly visualize</strong> a property's potential",
       card2b3: '<strong>Consistent high-quality results</strong> across all listings',
-      card3title: 'Predictable, scalable pricing',
-      card3b1: '<strong>Without freelancers, revisions or production delays</strong>',
-      card3b2: '<strong>50–150× cheaper</strong> than traditional staging',
-      card3b3: 'No <strong>unpredictable production costs</strong> or delays',
+      card3title: 'Fast & Scalable',
+      card3b1: '<strong>Create multiple visuals</strong> at once',
+      card3b2: 'No revisions or <strong>production delays</strong>',
+      card3b3: 'Built to <strong>scale</strong> across your listings',
       card4title: 'Sell properties faster',
       card4b1: 'Listings sell up to <strong>2× faster</strong> with better presentation',
       card4b2: 'Generate <strong>more buyer inquiries</strong>',
@@ -251,9 +250,10 @@ const t = {
 
     // ABOUT
     about: {
-      heading: 'Making the future of real estate visible',
-      p1: "Selling potential is one of the biggest challenges in real estate. Buyers often struggle to imagine what a property could become, especially when spaces are empty, outdated, or unfinished.",
-      p2: "Revisual was created to make that potential visible. By combining AI-powered visual upgrades with data-driven insights, we help real estate teams present properties more clearly and help buyers understand their possibilities faster.",
+      heading: 'Making interactive real estate visuals simple and accessible.',
+      p1: "Today, creating <strong>high quality property visuals</strong> is often <strong>time consuming</strong>, <strong>inconsistent</strong>, and <strong>difficult to scale</strong>. Real estate teams spend time experimenting with different tools, coordinating designers, or manually generating visuals one by one. Even with AI, the process is often <strong>fragmented and inefficient</strong>, making it hard to produce attractive and consistent visualisations across listings.",
+      p2: "<strong>Revisual is one platform where everything comes together, built for speed, simplicity, and scale.</strong> From interactive visuals to marketing ready content, real estate teams can <strong>create, manage, and deliver visuals quickly and consistently</strong>, without extra coordination or manual work. We combine <strong>AI-powered technology</strong> with <strong>data-driven insights</strong> to continuously improve how properties are presented and understood. Our mission is to make visualisation a <strong>natural and accessible part</strong> of every real estate workflow, helping teams present properties <strong>more clearly</strong> and operate <strong>more efficiently</strong>.",
+      p3: "<strong><em>Because when visualisation becomes simple, properties perform better.</em></strong>",
     },
 
     // CONTACT
@@ -273,6 +273,23 @@ const t = {
       successMsg: "Thank you for reaching out. We've received your message and will get back to you within 24 hours.",
       sendAnother: 'Send another message',
       errorMsg: 'Something went wrong. Please try again or email us directly.',
+    },
+
+    workflowComparison: {
+      sectionHeading: 'From inefficient workflows to simple,<br />scalable visualisation',
+      leftLabel: 'TRADITIONAL WORKFLOW',
+      leftTitle: 'Property visualisation is still inefficient',
+      leftB1: 'Messing around with <strong>AI tools</strong>',
+      leftB2: 'One visual at a time is <strong>too slow</strong>',
+      leftB3: '<strong>Inconsistent results</strong> across listings',
+      leftB4: '<strong>Manual work</strong> for every piece of content',
+      rightLabel: 'WITH REVISUAL',
+      rightTitle: 'Visualisation, simplified for every listing',
+      rightSub: 'Revisual brings everything into <strong>one simple workflow</strong>, making property visualisation <strong>faster</strong>, <strong>consistent</strong>, and <strong>easy to use</strong> for every team.',
+      rightB1: 'One <strong>simple workflow</strong> for every listing',
+      rightB2: 'Generate multiple visuals <strong>instantly</strong>',
+      rightB3: '<strong>No manual work</strong> or coordination',
+      rightB4: '<strong>Consistent</strong> across every property',
     },
 
     // FOOTER
@@ -304,11 +321,10 @@ const t = {
 
     // HERO
     hero: {
-      line1: 'Verkoop panden',
-      line2: 'sneller door hun',
-      line3: 'echte potentieel',
-      line4: 'zichtbaar te maken.',
-      sub: "Help kopers meteen begrijpen wat een pand kan worden.",
+      line1: 'De slimste manier',
+      line2: 'om',
+      line3: 'vastgoedvisuals te maken.',
+      sub: "Creëer interactieve visuals sneller, eenvoudiger en op schaal voor al je listings.",
       ctaPrimary: 'Upgrade je panden',
       ctaSecondary: 'Bekijk onze oplossingen',
       beforeLabel: 'Voor',
@@ -334,13 +350,13 @@ const t = {
         title: "Kopers zien een project,\ngeen thuis",
         body: "Verouderde of onafgewerkte ruimtes doen kopers denken aan renovatiewerken, tijd en kosten. In plaats van zich voor te stellen hoe het is om er te wonen, zien ze vooral moeite en investering.",
       },
-      quote: "\"Als kopers het potentieel niet zien, nemen ze geen contact op.\"",
+      quote: "\"Wanneer panden moeilijk in te beelden zijn, twijfelen kopers\"",
     },
 
     // INTERACTIVE DEMO / VALUE
     demo: {
-      heading1: 'Zie meteen',
-      headingItalic: 'het potentieel',
+      heading1: 'Verander listings in',
+      headingItalic: 'interactieve koperervaringen',
       sub: "Toon meteen het potentieel van een pand, zonder extra werk voor je team.",
       styleModern: 'Modern',
       styleJapandi: 'Japandi',
@@ -352,11 +368,11 @@ const t = {
       vsDesc: 'Voegt realistische meubels en styling toe aan lege ruimtes zodat kopers zich kunnen inbeelden er te wonen.',
       vrTitle: 'Virtual Renovation',
       vrDesc: 'Toont een gerenoveerde versie van verouderde interieurs zonder fysieke constructie.',
-      rightHeading: 'Van onzekerheid naar duidelijke waarde',
-      benefit1: 'Meer kwalitatieve aanvragen van kopers',
-      benefit2: 'Minder prijsdruk tijdens onderhandelingen',
-      benefit3: 'Snellere verkoop van lege of verouderde panden',
-      benefit4: 'Vermijd duizenden euro\'s onderhandelingsverlies door een zwakke presentatie.',
+      rightHeading: 'Naadloos geïntegreerd in je workflow',
+      benefit1: '<strong>Meer aanvragen</strong>, <strong>snellere verkoop</strong>, <strong>sterkere onderhandelingen</strong>',
+      benefit2: '<strong>Verschillende stijlen</strong> voor elke koper',
+      benefit3: '<strong>Tientallen realistische visuals</strong> in de tijd van één',
+      benefit4: 'Zet onzekerheid om in <strong>duidelijke vastgoedwaarde</strong>',
       stat: "81% van de kopers zegt dat staging helpt om het potentieel van een pand te visualiseren",
       statSource: '— National Association of Realtors',
       desc: 'Voeg automatisch Revisuals (visuele upgrades) toe aan je listings met een interactieve slider.',
@@ -367,15 +383,15 @@ const t = {
 
     // CONTENT GENERATION
     content: {
-      heading: 'Ontvang kant-en-klare vastgoedcontent',
-      subheading: 'Wij zetten je listings om in aantrekkelijke videocontent',
-      formatsLabel: 'Verschillende vastgoedvideoformats:',
-      bullet1: 'Laat kopers het pand al voelen vóór het bezoek',
-      bullet2: "Korte teaser video's van panden",
-      bullet3: 'Zet de beste ruimtes en kenmerken in de kijker',
-      bullet4: 'Maak listings aantrekkelijker',
-      ctaBox: "Trek meer aandacht van kopers met vastgoedvideo's.",
-      cta: 'Ontvang videocontent',
+      heading: 'Zet elke listing om in videocontent',
+      subheading: 'Ontvang automatisch<br />kant-en-klare vastgoedvideo\'s',
+      formatsLabel: 'Videocontent klaar voor elk kanaal',
+      bullet1: '<strong>Kant-en-klare video\'s</strong> voor elke listing',
+      bullet2: '<strong>Verschillende formaten</strong> voor social, portalen en campagnes',
+      bullet3: '<strong>Consistente content</strong> over al je panden heen',
+      bullet4: '<strong>Geen editing</strong>, geen coördinatie, geen vertraging',
+      ctaBox: 'Meer zichtbaarheid voor je listings, zonder extra werk',
+      cta: 'Genereer videocontent',
       video1Title: 'Property highlight video',
       video1Desc: "Geef kopers snel een gevoel bij de sterkste ruimtes van het pand.",
       video2Title: 'Virtual Staging Content',
@@ -414,7 +430,7 @@ const t = {
     howItWorks: {
       heading: 'Revisual in 60 seconden',
       step1num: '01',
-      step1title: 'Selecteer je foto\'s',
+      step1title: 'Selecteer je foto\'s of voeg listing link toe',
       step1desc: 'Upload of selecteer de foto\'s van het pand die je wil transformeren.',
       step2num: '02',
       step2title: 'Kies je stijlen en klik op klaar',
@@ -453,10 +469,10 @@ const t = {
       card2b1: '<strong>Fotorealistische visuals</strong> aangedreven door geavanceerde AI',
       card2b2: "Help kopers <strong>meteen het potentieel</strong> van een pand te visualiseren",
       card2b3: '<strong>Consistent hoogwaardige resultaten</strong> over al je listings heen',
-      card3title: 'Voorspelbare, schaalbare pricing',
-      card3b1: '<strong>Zonder freelancers, herwerkingen of productievertragingen</strong>',
-      card3b2: '<strong>50–150× goedkoper</strong> dan traditionele staging',
-      card3b3: 'Geen <strong>onvoorspelbare productiekosten</strong> of vertragingen',
+      card3title: 'Snel & Schaalbaar',
+      card3b1: '<strong>Meerdere visuals</strong> tegelijkertijd genereren',
+      card3b2: 'Geen revisies of <strong>productievertragingen</strong>',
+      card3b3: 'Gebouwd om te <strong>schalen</strong> over al je listings',
       card4title: 'Verkoop panden sneller',
       card4b1: 'Listings verkopen tot <strong>2× sneller</strong> met een betere presentatie',
       card4b2: 'Genereer <strong>meer aanvragen van kopers</strong>',
@@ -543,9 +559,10 @@ const t = {
 
     // ABOUT
     about: {
-      heading: 'De toekomst van vastgoed zichtbaar maken',
-      p1: "Het verkopen van potentieel is een van de grootste uitdagingen in vastgoed. Kopers hebben vaak moeite om zich voor te stellen wat een pand kan worden, zeker wanneer ruimtes leeg, verouderd of onafgewerkt zijn.",
-      p2: "Revisual is ontwikkeld om dat potentieel zichtbaar te maken. Door AI-gestuurde visuele upgrades te combineren met data-gedreven inzichten, helpen we vastgoedteams om panden duidelijker te presenteren en kopers sneller hun mogelijkheden te laten begrijpen.",
+      heading: 'Interactieve vastgoedvisualisaties simpel en toegankelijk maken.',
+      p1: 'Vandaag de dag is het creëren van <strong>hoogwaardige vastgoedvisuals</strong> vaak <strong>tijdrovend</strong>, <strong>inconsistent</strong> en <strong>moeilijk schaalbaar</strong>. Vastgoedteams besteden tijd aan het experimenteren met verschillende tools, het coördineren van designers of het handmatig genereren van visuals per pand. Zelfs met AI is het proces vaak <strong>gefragmenteerd en inefficiënt</strong>, waardoor het lastig is om overal aantrekkelijke en consistente visualisaties te tonen.',
+      p2: '<strong>Revisual is één platform waar alles samenkomt, gebouwd voor snelheid, eenvoud en schaalbaarheid.</strong> Van interactieve visuals tot marketing-klare content: vastgoedteams kunnen visuals <strong>snel en consistent creëren, beheren en leveren</strong>, zonder extra coördinatie of handmatig werk. We combineren <strong>AI-gestuurde technologie</strong> met <strong>data-gedreven inzichten</strong> om continu te verbeteren hoe panden worden gepresenteerd en begrepen. Onze missie is om visualisatie een <strong>natuurlijk en toegankelijk onderdeel</strong> te maken van elke vastgoedworkflow, zodat teams panden <strong>duidelijker kunnen presenteren</strong> en <strong>efficiënter kunnen werken</strong>.',
+      p3: '<strong><em>Want wanneer visualisatie simpel wordt, presteren panden beter.</em></strong>',
     },
 
     // CONTACT
@@ -565,6 +582,23 @@ const t = {
       successMsg: "Bedankt voor je bericht. We nemen het zo snel mogelijk op, normaal gezien binnen 24 uur.",
       sendAnother: 'Stuur nog een bericht',
       errorMsg: 'Er is iets fout gegaan. Probeer opnieuw of mail ons rechtstreeks.',
+    },
+
+    workflowComparison: {
+      sectionHeading: 'Van inefficiënte workflows naar simpele,<br />schaalbare visualisatie',
+      leftLabel: 'TRADITIONELE WORKFLOW',
+      leftTitle: 'Vastgoedvisualisatie is nog steeds inefficiënt',
+      leftB1: 'Aan het sukkelen met <strong>AI-tools</strong>',
+      leftB2: 'Eén visual per keer is <strong>te traag</strong>',
+      leftB3: '<strong>Inconsistente resultaten</strong> over al je listings',
+      leftB4: '<strong>Handmatig werk</strong> voor elk stukje content',
+      rightLabel: 'MET REVISUAL',
+      rightTitle: 'Visualisatie, gesimplificeerd voor elke listing',
+      rightSub: 'Revisual brengt alles samen in <strong>één simpele workflow</strong>, waardoor vastgoedvisualisatie <strong>sneller</strong>, <strong>consistenter</strong> en <strong>makkelijker te gebruiken</strong> is voor elk team.',
+      rightB1: 'Eén <strong>simpele workflow</strong> voor elke listing',
+      rightB2: 'Genereer meerdere visuals <strong>in één keer</strong>',
+      rightB3: '<strong>Geen handmatig werk</strong> of coördinatie',
+      rightB4: '<strong>Consistent</strong> over al je panden heen',
     },
 
     // FOOTER

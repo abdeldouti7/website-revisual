@@ -78,35 +78,35 @@ const Hero = () => {
       </div>
 
       {/* Main content — responsive grid */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24">
+      <div className="relative z-10 w-full max-w-7xl 3xl:max-w-9xl 4xl:max-w-10xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24 4xl:pt-64 4xl:pb-48">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* LEFT — Text */}
           <div className="flex flex-col">
-            <h1 className="text-primary flex flex-col leading-[0.92] tracking-tighter">
+            <h1 className="flex flex-col leading-[0.92] tracking-tighter">
               <span
                 ref={el => elementsRef.current[0] = el}
-                className="font-heading font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                className="font-drama italic text-lemon-grass text-4xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl 4xl:text-[8rem]"
               >
                 {c.line1}
               </span>
               <span
                 ref={el => elementsRef.current[1] = el}
-                className="font-heading font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1"
+                className="font-heading font-semibold text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl 4xl:text-[8rem] mt-1"
               >
                 {c.line2}
               </span>
               <span
                 ref={el => elementsRef.current[2] = el}
-                className="font-drama italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-lemon-grass mt-2 leading-[0.92]"
+                className="font-heading font-semibold text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl 4xl:text-[8rem] mt-2 leading-[0.92]"
               >
-                {c.line3}<br />{c.line4}
+                {c.line3}
               </span>
             </h1>
 
             <p
               ref={el => elementsRef.current[3] = el}
-              className="mt-6 text-pebbles/70 font-sans text-base md:text-lg max-w-lg font-normal"
+              className="mt-8 text-pebbles/80 font-sans text-lg md:text-xl 3xl:text-2xl 4xl:text-3xl max-w-xl 3xl:max-w-2xl font-semibold leading-relaxed"
             >
               {c.sub}
             </p>

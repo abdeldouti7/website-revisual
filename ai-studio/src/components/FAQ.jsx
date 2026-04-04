@@ -30,28 +30,43 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 bg-cream px-5 lg:px-10 border-t border-silver-fern/5">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="font-heading font-semibold text-3xl text-silver-fern mb-3">{c.heading}</h2>
-          <p className="font-sans text-base text-pebbles/70 font-normal max-w-xl mx-auto">{c.sub}</p>
+    <section className="py-24 bg-silver-fern px-5 lg:px-10 border-t border-white/5 relative overflow-hidden">
+      {/* Background visual elements */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-lemon-grass/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      
+      <div className="max-w-3xl mx-auto relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-cream mb-3">{c.heading}</h2>
+          <p className="font-sans text-base md:text-lg text-cream/70 font-normal max-w-xl mx-auto">{c.sub}</p>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`border border-silver-fern/10 rounded-[1.5rem] overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-white shadow-sm' : 'bg-white/50 hover:border-lemon-grass/20'}`}
+              className={`border border-white/10 rounded-[1.5rem] overflow-hidden transition-all duration-500 ${
+                openIndex === index 
+                ? 'bg-cream shadow-2xl shadow-black/20' 
+                : 'bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/20'
+              }`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full flex items-center justify-between p-4 md:p-5 text-left focus:outline-none"
+                className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none"
               >
-                <span className="font-heading font-semibold text-base md:text-lg text-silver-fern">{faq.q}</span>
-                <ChevronDown className={`w-5 h-5 text-pebbles/30 transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-silver-fern' : ''}`} />
+                <span className={`font-heading font-semibold text-base md:text-lg transition-colors duration-300 ${
+                  openIndex === index ? 'text-silver-fern' : 'text-cream'
+                }`}>
+                  {faq.q}
+                </span>
+                <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${
+                  openIndex === index ? 'rotate-180 text-silver-fern' : 'text-cream/30'
+                }`} />
               </button>
-              <div className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="px-4 md:px-5 pb-4 md:pb-5 font-sans text-pebbles/70 leading-relaxed text-sm md:text-base">
+              <div className={`transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className={`px-5 md:px-6 pb-6 font-sans leading-relaxed text-sm md:text-base ${
+                  openIndex === index ? 'text-silver-fern/70' : 'text-cream/70'
+                }`}>
                   {faq.a}
                 </div>
               </div>
@@ -61,14 +76,14 @@ const FAQ = () => {
       </div>
 
       {/* Final CTA */}
-      <div className="max-w-4xl mx-auto mt-24 text-center bg-silver-fern text-cream p-10 md:p-12 rounded-[2.5rem] shadow-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lemon-grass/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="max-w-4xl mx-auto mt-24 text-center bg-cream text-silver-fern p-10 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border border-white/10">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lemon-grass/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-lemon-grass/30 transition-colors duration-700" />
         <div className="relative z-10 flex flex-col items-center">
-          <h2 className="font-heading font-semibold text-3xl md:text-4xl tracking-tight text-cream mb-3">{c.ctaHeading}</h2>
-          <p className="font-sans text-base md:text-lg text-cream/80 font-normal max-w-xl mb-8">{c.ctaSub}</p>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl tracking-tight text-silver-fern mb-3">{c.ctaHeading}</h2>
+          <p className="font-sans text-base md:text-lg text-silver-fern/70 font-normal max-w-xl mb-8">{c.ctaSub}</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="magnetic-btn bg-lemon-grass text-pebbles px-10 py-4 rounded-[2rem] font-bold text-base hover:bg-cream hover:text-silver-fern transition-all duration-300 shadow-xl"
+            className="magnetic-btn bg-silver-fern text-cream px-10 py-4 rounded-[2rem] font-bold text-base hover:bg-lemon-grass hover:text-silver-fern transition-all duration-300 shadow-xl"
           >
             {c.ctaBtn}
           </button>

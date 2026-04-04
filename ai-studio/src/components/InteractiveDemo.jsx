@@ -82,16 +82,16 @@ const InteractiveDemo = () => {
   const benefits = [c.benefit1, c.benefit2, c.benefit3, c.benefit4];
 
   return (
-    <section id="demo" ref={containerRef} className="py-16 sm:py-24 px-4 sm:px-5 lg:px-10 max-w-7xl mx-auto bg-cream">
-      <div className="demo-anim text-center mb-10 max-w-3xl mx-auto">
-        <h2 className="font-heading font-semibold text-3xl md:text-4xl lg:text-5xl text-silver-fern tracking-tight max-w-2xl mx-auto leading-tight mb-4">
+    <section id="demo" ref={containerRef} className="py-16 sm:py-24 3xl:py-32 4xl:py-44 px-4 sm:px-5 lg:px-10 max-w-7xl 3xl:max-w-9xl 4xl:max-w-10xl mx-auto bg-cream">
+      <div className="demo-anim text-center mb-10 3xl:mb-16 max-w-3xl 3xl:max-w-5xl mx-auto">
+        <h2 className="font-heading font-semibold text-3xl md:text-4xl lg:text-5xl 3xl:text-7xl 4xl:text-8xl text-silver-fern tracking-tight max-w-2xl 3xl:max-w-4xl mx-auto leading-tight mb-4">
           {c.heading1}{' '}
           <span className="text-lemon-grass font-drama italic tracking-normal relative inline-block group cursor-default">
             {c.headingItalic}
             <span className="absolute -bottom-1 left-0 w-full h-1.5 bg-lemon-grass rounded-full animate-line-swipe"></span>
           </span>
         </h2>
-        <p className="mt-5 font-sans text-base text-pebbles/70 leading-relaxed font-normal">
+        <p className="mt-5 font-sans text-base 3xl:text-xl 4xl:text-2xl text-pebbles/70 leading-relaxed font-normal">
           {c.sub}
         </p>
       </div>
@@ -206,7 +206,7 @@ const InteractiveDemo = () => {
             {benefits.map((benefit, i) => (
               <li key={i} className="flex items-start gap-4">
                 <CheckCircle2 className="w-5 h-5 text-lemon-grass shrink-0 mt-0.5" />
-                <span className="font-sans text-pebbles/80 font-medium text-base leading-snug">{benefit}</span>
+                <span className="font-sans text-pebbles/80 font-medium text-base leading-snug" dangerouslySetInnerHTML={{ __html: benefit }}></span>
               </li>
             ))}
           </ul>

@@ -6,7 +6,7 @@ import { useLanguage } from '../LanguageContext';
 import t from '../translations';
 import img1 from '../../../footage/ChatGPT Image 3 mrt 2026, 15_47_54.png';
 import img2 from '../../../footage/badkamer 1.png';
-import img3 from '../../../footage/badkamerafter.png';
+import img3 from '../../../footage/project pic.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +44,7 @@ const Problem = () => {
     <section
       id="problem"
       ref={sectionRef}
-      className="py-12 lg:py-24 px-5 lg:px-10 max-w-7xl mx-auto overflow-hidden bg-cream"
+      className="pt-12 lg:pt-24 pb-8 lg:pb-12 px-5 lg:px-10 max-w-7xl mx-auto overflow-hidden bg-cream"
     >
       <div className="text-center mb-16 problem-title">
         <h2 className="font-heading font-bold text-3xl md:text-5xl text-silver-fern tracking-tight max-w-3xl mx-auto leading-[1.1]">
@@ -75,7 +75,7 @@ const Problem = () => {
         ))}
       </div>
 
-      <div className="mt-20 md:mt-24 max-w-4xl mx-auto problem-banner">
+      <div className="mt-12 md:mt-16 max-w-4xl mx-auto problem-banner">
         <div className="bg-lemon-grass-60/10 border border-silver-fern/10 rounded-[2.5rem] md:rounded-full py-6 md:py-8 px-8 md:px-12 text-center shadow-sm relative overflow-hidden group">
           <div className="absolute inset-0 bg-lemon-grass-60/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <p className="font-heading font-bold italic text-lg md:text-2xl text-silver-fern relative z-10 leading-tight">

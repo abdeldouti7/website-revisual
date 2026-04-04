@@ -69,8 +69,8 @@ const ContentGeneration = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-32">
-        <div className="content-anim-left lg:col-span-5 order-2 lg:order-1">
-          <h3 className="font-heading font-semibold text-3xl md:text-4xl text-pebbles leading-tight mb-8">{c.subheading}</h3>
+        <div className="content-anim-left lg:col-span-6 order-2 lg:order-1">
+          <h3 className="font-heading font-semibold text-2xl md:text-[2.1rem] text-pebbles leading-[1.15] mb-8" dangerouslySetInnerHTML={{ __html: c.subheading }}></h3>
           <div className="space-y-8 mb-12">
             <div>
               <p className="font-sans text-sm font-bold text-lemon-grass uppercase tracking-widest mb-4">{c.formatsLabel}</p>
@@ -80,13 +80,13 @@ const ContentGeneration = () => {
                     <div className="mt-1 w-6 h-6 rounded-full bg-lemon-grass-60/15 flex items-center justify-center flex-shrink-0">
                       <CheckCircle2 className="w-3.5 h-3.5 text-lemon-grass" />
                     </div>
-                    <span className="font-sans text-pebbles/70 text-lg font-medium">{item}</span>
+                    <span className="font-sans text-pebbles/70 text-lg font-medium" dangerouslySetInnerHTML={{ __html: item }}></span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <div className="mb-10 p-6 bg-lemon-grass-60/15 rounded-2xl border border-lemon-grass-60/20 inline-block font-sans text-lg text-pebbles font-bold">
+          <div className="mb-10 p-6 bg-lemon-grass-60/15 rounded-2xl border border-lemon-grass-60/20 inline-block font-sans text-lg text-pebbles font-bold whitespace-nowrap">
             {c.ctaBox}
           </div>
           <div>
@@ -100,7 +100,7 @@ const ContentGeneration = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-7 order-1 lg:order-2" ref={visualContainerRef}>
+        <div className="lg:col-span-6 order-1 lg:order-2" ref={visualContainerRef}>
           <div className="relative mockup-visual-container">
             <div className="relative mockup-inner-container h-[550px] flex items-center justify-center mb-0">
               <div className="mockup-photo absolute -top-12 left-1/2 -translate-x-1/2 z-0 w-40 h-56 rounded-xl overflow-hidden shadow-2xl border-2 border-white -rotate-2">

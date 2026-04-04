@@ -36,7 +36,7 @@ const Navbar = () => {
       {/* Pill navbar */}
       <nav
         ref={navRef}
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl rounded-full px-5 py-3 transition-all duration-700 ease-in-out flex items-center justify-between ${
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl 3xl:max-w-6xl 4xl:max-w-7xl rounded-full px-5 py-3 3xl:px-8 3xl:py-4 transition-all duration-700 ease-in-out flex items-center justify-between ${
           scrolled
             ? 'bg-white/90 backdrop-blur-xl border border-silver-fern/10 shadow-lg text-silver-fern'
             : 'bg-white/60 backdrop-blur-md border border-pebbles/5 text-silver-fern'

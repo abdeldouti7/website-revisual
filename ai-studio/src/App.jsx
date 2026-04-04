@@ -2,6 +2,7 @@ import React from 'react';
 import { LanguageProvider } from './LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import WorkflowComparison from './components/WorkflowComparison';
 import Problem from './components/Problem';
 import InteractiveDemo from './components/InteractiveDemo';
 import ContentGeneration from './components/ContentGeneration';
@@ -22,6 +23,7 @@ function App() {
         <div className="noise-overlay"></div>
         <Navbar />
         <Hero />
+        <WorkflowComparison />
         <Problem />
         <InteractiveDemo />
         <ContentGeneration />

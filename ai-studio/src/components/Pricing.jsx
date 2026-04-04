@@ -18,11 +18,11 @@ const Pricing = () => {
   const c = t[lang].pricing;
 
   return (
-    <section id="pricing" className="py-24 bg-cream px-4 lg:px-8 relative z-10 border-t border-silver-fern/5">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10 flex flex-col items-center">
-          <h2 className="font-heading font-semibold text-2xl md:text-3xl text-silver-fern tracking-tight mb-2">{c.heading}</h2>
-          <p className="font-sans text-[15px] md:text-base text-pebbles/70 max-w-xl font-normal">{c.sub}</p>
+    <section id="pricing" className="py-24 3xl:py-32 4xl:py-40 bg-cream px-4 lg:px-8 relative z-10 border-t border-silver-fern/5">
+      <div className="max-w-6xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto">
+        <div className="text-center mb-10 3xl:mb-16 flex flex-col items-center">
+          <h2 className="font-heading font-semibold text-2xl md:text-3xl 3xl:text-4xl 4xl:text-5xl text-silver-fern tracking-tight mb-2">{c.heading}</h2>
+          <p className="font-sans text-[15px] md:text-base 3xl:text-lg 4xl:text-xl text-pebbles/70 max-w-xl 3xl:max-w-2xl font-normal">{c.sub}</p>
         </div>
 
         {/* ROW 1: CORE PACKS */}
