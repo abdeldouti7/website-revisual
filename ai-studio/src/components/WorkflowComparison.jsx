@@ -39,7 +39,7 @@ const WorkflowComparison = () => {
             {/* SECTION HEADING */}
             <div className="text-center mb-10 3xl:mb-14 workflow-anim">
                 <h2 
-                    className="font-heading font-semibold text-3xl md:text-[2.5rem] 3xl:text-5xl 4xl:text-6xl text-silver-fern tracking-tight leading-[1.1] max-w-4xl mx-auto"
+                    className="font-heading font-semibold text-3xl md:text-[2.8rem] lg:text-[3.2rem] 3xl:text-5xl 4xl:text-[6.5rem] text-silver-fern tracking-tight leading-[1.05] max-w-6xl 3xl:max-w-7xl 4xl:max-w-8xl mx-auto"
                     dangerouslySetInnerHTML={{ __html: c.sectionHeading }}
                 />
             </div>
@@ -54,7 +54,7 @@ const WorkflowComparison = () => {
                         <div className="hidden md:block absolute left-1/2 top-10 bottom-24 w-px bg-silver-fern/15 z-20"></div>
 
                         {/* LEFT COLUMN — Traditional */}
-                        <div className="p-8 md:p-10 lg:p-12 3xl:p-16 pt-10 md:pt-14 pb-44 3xl:pb-64 flex flex-col items-center justify-start h-full bg-white relative">
+                        <div className="p-8 md:p-10 lg:p-12 3xl:p-16 pt-10 md:pt-14 pb-12 md:pb-44 3xl:pb-64 flex flex-col items-center justify-start h-full bg-white relative">
                             <div className="relative z-10 w-full text-center md:text-left">
                                 <div className="mb-4 min-h-[100px] md:min-h-[110px] 3xl:min-h-[140px]">
                                     <span className="inline-block px-3 py-1 rounded-full bg-silver-fern/5 text-silver-fern font-sans text-[10px] font-bold uppercase tracking-widest mb-4 border border-silver-fern/10">
@@ -65,7 +65,7 @@ const WorkflowComparison = () => {
                                     </h3>
                                 </div>
                                 
-                                <ul className="space-y-6 inline-block text-left pb-20">
+                                <ul className="space-y-6 inline-block text-left pb-8 md:pb-20">
                                     {[c.leftB1, c.leftB2, c.leftB3, c.leftB4].map((bullet, i) => {
                                         const Icon = leftIcons[i];
                                         return (
@@ -82,7 +82,7 @@ const WorkflowComparison = () => {
                         </div>
 
                         {/* RIGHT COLUMN — Revisual */}
-                        <div className="p-8 md:p-10 lg:p-12 3xl:p-16 pt-10 md:pt-14 pb-44 3xl:pb-64 flex flex-col items-center justify-start h-full bg-silver-fern relative text-cream">
+                        <div className="p-8 md:p-10 lg:p-12 3xl:p-16 pt-10 md:pt-14 pb-32 md:pb-44 3xl:pb-64 flex flex-col items-center justify-start h-full bg-silver-fern relative text-cream">
                             <div className="relative z-10 w-full text-center md:text-left">
                                 <div className="mb-4 min-h-[100px] md:min-h-[110px] 3xl:min-h-[140px]">
                                     <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-cream font-sans text-[10px] font-bold uppercase tracking-widest mb-4 border border-white/5">
@@ -92,8 +92,8 @@ const WorkflowComparison = () => {
                                         {c.rightTitle}
                                     </h3>
                                 </div>
-
-                                <ul className="space-y-6 inline-block text-left pb-20">
+ 
+                                <ul className="space-y-6 inline-block text-left pb-16 md:pb-20">
                                     {[c.rightB1, c.rightB2, c.rightB3, c.rightB4].map((bullet, i) => {
                                         const Icon = rightIcons[i];
                                         return (

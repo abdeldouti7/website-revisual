@@ -288,8 +288,8 @@ const t = {
       rightSub: 'Revisual brings everything into <strong>one simple workflow</strong>, making property visualisation <strong>faster</strong>, <strong>consistent</strong>, and <strong>easy to use</strong> for every team.',
       rightB1: 'One <strong>simple workflow</strong> for every listing',
       rightB2: 'Generate multiple visuals <strong>instantly</strong>',
-      rightB3: '<strong>No manual work</strong> or coordination',
-      rightB4: '<strong>Consistent</strong> across every property',
+      rightB3: '<strong>Consistent</strong> across every property',
+      rightB4: '<strong>No manual work</strong> or coordination',
     },
 
     // FOOTER
@@ -597,8 +597,8 @@ const t = {
       rightSub: 'Revisual brengt alles samen in <strong>één simpele workflow</strong>, waardoor vastgoedvisualisatie <strong>sneller</strong>, <strong>consistenter</strong> en <strong>makkelijker te gebruiken</strong> is voor elk team.',
       rightB1: 'Eén <strong>simpele workflow</strong> voor elke listing',
       rightB2: 'Genereer meerdere visuals <strong>in één keer</strong>',
-      rightB3: '<strong>Geen handmatig werk</strong> of coördinatie',
-      rightB4: '<strong>Consistent</strong> over al je panden heen',
+      rightB3: '<strong>Consistent</strong> over al je panden heen',
+      rightB4: '<strong>Geen handmatig werk</strong> of coördinatie',
     },
 
     // FOOTER

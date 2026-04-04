@@ -86,7 +86,7 @@ const ContentGeneration = () => {
               </ul>
             </div>
           </div>
-          <div className="mb-10 p-6 bg-lemon-grass-60/15 rounded-2xl border border-lemon-grass-60/20 inline-block font-sans text-lg text-pebbles font-bold whitespace-nowrap">
+          <div className="mb-10 p-5 md:p-6 bg-lemon-grass-60/15 rounded-2xl border border-lemon-grass-60/20 inline-block font-sans text-base md:text-lg text-pebbles font-bold leading-snug">
             {c.ctaBox}
           </div>
           <div>
