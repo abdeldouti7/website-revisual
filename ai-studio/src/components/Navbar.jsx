@@ -78,7 +78,7 @@ const Navbar = () => {
             {lang === 'en' ? 'NL' : 'EN'}
           </button>
           <a
-            href="https://dashboard.revisual.io/login"
+            href="https://app.revisual.be/login"
             target="_blank"
             rel="noopener noreferrer"
             className={`font-sans font-medium text-[13px] px-4 py-1.5 rounded-full border transition-colors hover:text-lemon-grass ${
@@ -87,7 +87,7 @@ const Navbar = () => {
                 : 'border-silver-fern/30 text-silver-fern hover:bg-silver-fern/5'
             }`}
           >
-            {c.signIn}
+            {c.signUp}
           </a>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -140,12 +140,12 @@ const Navbar = () => {
               {lang === 'en' ? 'Switch to NL' : 'Switch to EN'}
             </button>
             <a
-              href="https://dashboard.revisual.io/login"
+              href="https://app.revisual.be/login"
               target="_blank"
               rel="noopener noreferrer"
               className="font-sans font-medium text-sm px-5 py-3 rounded-full border border-primary/20 text-primary hover:bg-primary/5 transition-colors text-center"
             >
-              {c.signIn}
+              {c.signUp}
             </a>
             <button
               onClick={() => handleNavClick('#contact')}

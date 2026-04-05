@@ -6,7 +6,7 @@ const t = {
       howItWorks: 'How it works',
       plans: 'Plans',
       about: 'About',
-      signIn: 'Sign in',
+      signUp: 'Sign up',
       bookDemo: 'Book a demo',
     },
 
@@ -315,7 +315,7 @@ const t = {
       howItWorks: 'Hoe het werkt',
       plans: 'Plannen',
       about: 'Over ons',
-      signIn: 'Inloggen',
+      signUp: 'Sign up',
       bookDemo: 'Boek een demo',
     },
 
