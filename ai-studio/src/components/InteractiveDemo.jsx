@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 import t from '../translations';
 
@@ -12,6 +12,10 @@ const InteractiveDemo = () => {
   const [style, setStyle] = useState('Japandi');
   const [sliderPosition, setSliderPosition] = useState(50);
   const [showInfo, setShowInfo] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [url, setUrl] = useState('');
+  const [email, setEmail] = useState('');
+  const [formStatus, setFormStatus] = useState(null);
   const containerRef = useRef(null);
   const sliderRef = useRef(null);
   const { lang } = useLanguage();
@@ -41,16 +45,27 @@ const InteractiveDemo = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.from(".demo-anim", {
-        y: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power3.out",
-        scrollTrigger: { trigger: containerRef.current, start: "top 75%" }
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".demo-reveal-card-container",
+          start: "center bottom", 
+          end: "center top",
+          scrub: true
+        }
       });
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
+      
+      // Halfway point mathematically hits exactly at center of viewport
+      tl.fromTo(".demo-global-overlay", { opacity: 0 }, { opacity: 1, duration: 1 }, 0);
+      tl.fromTo(".demo-reveal-card", 
+        { scale: 0.95, y: 0, boxShadow: "none" }, 
+        { scale: 1.15, y: 0, boxShadow: "none", duration: 1 }, 0);
+        
+      // Leaves center
+      tl.to(".demo-global-overlay", { opacity: 0, duration: 1 }, 1);
+      tl.to(".demo-reveal-card", 
+        { scale: 0.95, y: 0, boxShadow: "none", duration: 1 }, 1);
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
+      // Slider Animation (Original)
       ScrollTrigger.create({
         trigger: sliderRef.current,
         start: "top 75%",
@@ -69,8 +84,9 @@ const InteractiveDemo = () => {
         }
       });
     }, containerRef);
+    
     return () => ctx.revert();
-  }, []);
+  }, [lang]);
 
   const handlePointerMove = (e) => {
     if (!sliderRef.current) return;
@@ -81,9 +97,69 @@ const InteractiveDemo = () => {
 
   const benefits = [c.benefit1, c.benefit2, c.benefit3, c.benefit4];
 
+  const handleModalSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('SENDING');
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mgonroop", {
+        method: "POST",
+        body: JSON.stringify({ url, email, source: 'Demo Modal' }),
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+      });
+      
+      if (response.ok) {
+        setFormStatus('SUCCESS');
+        setUrl('');
+        setEmail('');
+      } else {
+        setFormStatus('ERROR');
+      }
+    } catch (error) {
+      setFormStatus('ERROR');
+    }
+  };
+
+  const [typedPlaceholder, setTypedPlaceholder] = useState("");
+  
+  useEffect(() => {
+    let timeout;
+    let isDeleting = false;
+    let i = 0;
+    const basePlaceholder = c.urlPlaceholder;
+    
+    const type = () => {
+      if (!isDeleting) {
+        if (i <= basePlaceholder.length) {
+          setTypedPlaceholder(basePlaceholder.slice(0, i));
+          i++;
+          timeout = setTimeout(type, 100);
+        } else {
+          isDeleting = true;
+          timeout = setTimeout(type, 2000); // pause when fully typed
+        }
+      } else {
+        if (i >= 0) {
+          setTypedPlaceholder(basePlaceholder.slice(0, i));
+          i--;
+          timeout = setTimeout(type, 50);
+        } else {
+          isDeleting = false;
+          timeout = setTimeout(type, 800); // pause when fully deleted
+        }
+      }
+    };
+    
+    timeout = setTimeout(type, 500);
+    return () => clearTimeout(timeout);
+  }, [c.urlPlaceholder]);
+
   return (
-    <section id="demo" ref={containerRef} className="py-16 sm:py-24 3xl:py-32 4xl:py-44 px-4 sm:px-5 lg:px-10 max-w-7xl 3xl:max-w-9xl 4xl:max-w-10xl mx-auto bg-cream">
-      <div className="demo-anim text-center mb-10 3xl:mb-16 max-w-3xl 3xl:max-w-5xl mx-auto">
+    <section id="demo" ref={containerRef} className="py-16 sm:py-24 3xl:py-32 4xl:py-44 px-4 sm:px-5 lg:px-10 max-w-7xl 3xl:max-w-9xl 4xl:max-w-10xl mx-auto bg-cream relative">
+      {/* Global Blur Overlay for Card Focus */}
+      <div className="demo-global-overlay fixed inset-0 z-[60] bg-cream/40 backdrop-blur-xl opacity-0 pointer-events-none" />
+
+      <div className="text-center mb-10 3xl:mb-16 max-w-3xl 3xl:max-w-5xl mx-auto">
         <h2 className="font-heading font-semibold text-3xl md:text-4xl lg:text-5xl 3xl:text-7xl 4xl:text-8xl text-silver-fern tracking-tight max-w-2xl 3xl:max-w-4xl mx-auto leading-tight mb-4">
           {c.heading1}{' '}
           <span className="text-lemon-grass font-drama italic tracking-normal relative inline-block group cursor-default">
@@ -96,16 +172,16 @@ const InteractiveDemo = () => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mb-24">
         {/* Left Column */}
-        <div className="demo-anim w-full lg:w-[60%] flex flex-col items-center">
+        <div className="w-full lg:w-[60%] flex flex-col items-center">
           {/* Style Selector */}
           <div className="flex items-center justify-center gap-1.5 mb-5 bg-white/50 backdrop-blur-sm p-1.5 rounded-full border border-primary/10 shadow-sm w-full max-w-md">
             {styleKeys.map((s) => (
               <button
                 key={s}
                 onClick={() => setStyle(s)}
-                className={`flex-1 px-2 sm:px-4 py-2 sm:py-2.5 rounded-full font-sans text-xs sm:text-sm font-medium transition-all duration-300 ${
+                className={`flex-1 px-2 sm:px-4 py-2.5 rounded-full font-sans text-xs sm:text-sm font-medium transition-all duration-300 ${
                   style === s ? 'bg-silver-fern text-cream shadow-md' : 'text-silver-fern/70 hover:text-silver-fern hover:bg-lemon-grass/10'
                 }`}
               >
@@ -197,7 +273,7 @@ const InteractiveDemo = () => {
         </div>
 
         {/* Right Column */}
-        <div className="demo-anim w-full lg:w-[40%] flex flex-col justify-center">
+        <div className="w-full lg:w-[40%] flex flex-col items-start">
           <h3 className="font-heading font-semibold text-2xl md:text-3xl text-silver-fern mb-6 leading-tight">
             {c.rightHeading}
           </h3>
@@ -211,7 +287,7 @@ const InteractiveDemo = () => {
             ))}
           </ul>
 
-          <div className="bg-white border border-silver-fern/10 shadow-sm p-6 rounded-[1.5rem] mt-2 mb-6 relative">
+          <div className="bg-white border border-silver-fern/10 shadow-sm p-6 rounded-[1.5rem] mt-2 mb-6 relative w-full">
             <div className="absolute -top-3 -left-3 text-4xl text-silver-fern font-serif leading-none">"</div>
             <p className="font-sans text-silver-fern/90 italic text-base font-medium leading-relaxed relative z-10">
               {c.stat}
@@ -224,17 +300,116 @@ const InteractiveDemo = () => {
           <p className="font-sans text-[13px] md:text-sm text-pebbles/70 mb-6 font-bold italic leading-relaxed md:pr-4">
             {c.desc}
           </p>
-
-          <div className="pt-2">
+          <div className="pt-2 text-left w-full">
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="magnetic-btn w-full md:w-auto bg-silver-fern text-cream px-6 py-3 rounded-[2rem] font-medium text-base hover:bg-lemon-grass hover:text-pebbles transition-all duration-300 shadow-md shadow-silver-fern/20 inline-block text-center"
+              className="magnetic-btn w-full bg-silver-fern text-cream px-8 py-3.5 rounded-[2rem] font-medium text-base hover:bg-lemon-grass hover:text-pebbles transition-all duration-300 shadow-lg shadow-silver-fern/20 inline-block text-center"
             >
               {c.cta}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Free Demo Entry (Repositioned to Full Width Row) */}
+      <div className="demo-reveal-card-container relative z-[70] mt-12 flex justify-center w-full px-4 sm:px-0 py-8">
+        <div className="demo-reveal-card w-full max-w-4xl text-left group relative">
+          <div className="absolute -inset-8 bg-lemon-grass/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          
+          <div className="relative bg-white border border-lemon-grass/20 p-8 sm:p-12 rounded-[3.5rem] shadow-2xl flex flex-col md:flex-row items-center gap-8 3xl:gap-12">
+            <div className="flex-1">
+              <h4 className="font-heading font-semibold text-3xl 3xl:text-4xl text-silver-fern mb-3">
+                {c.freeDemoHeading}
+              </h4>
+              <p className="font-sans text-pebbles/70 text-base 3xl:text-xl mb-0 leading-relaxed">
+                {c.freeDemoSub}
+              </p>
+            </div>
+            
+            <div className="w-full md:w-auto flex flex-col sm:flex-row gap-4">
+              <div className="relative flex-1 w-full md:w-64 lg:w-80 group">
+                <input
+                  type="url"
+                  placeholder={typedPlaceholder}
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  className="w-full h-full bg-cream/50 border border-silver-fern/10 px-6 py-4 rounded-full font-sans text-sm focus:outline-none focus:border-lemon-grass transition-all font-mono placeholder:font-sans placeholder-shown:border-lemon-grass/40 hover:border-lemon-grass/50 shadow-inner"
+                />
+                {!url && <div className="pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-lemon-grass animate-pulse z-10" style={{ left: `calc(1.5rem + ${typedPlaceholder.length * 7.5}px)` }}></div>}
+              </div>
+              <button
+                onClick={() => { if(url.trim()) setIsModalOpen(true); }}
+                className="magnetic-btn bg-lemon-grass text-silver-fern px-10 py-4 rounded-full font-bold text-base hover:bg-silver-fern hover:text-cream transition-all flex items-center justify-center gap-3 whitespace-nowrap shadow-xl"
+              >
+                <span>Try it for free</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={3} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-silver-fern/40 backdrop-blur-md animate-fade-in">
+          <div className="bg-cream w-full max-w-md rounded-[2.5rem] shadow-2xl border border-white/20 overflow-hidden relative scale-up">
+            <button 
+              onClick={() => { setIsModalOpen(false); setFormStatus(null); }}
+              className="absolute top-6 right-6 p-2 rounded-full bg-white/50 text-silver-fern hover:bg-white transition-all z-10"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            <div className="p-8 sm:p-10">
+              {formStatus === 'SUCCESS' ? (
+                <div className="text-center py-6 animate-fade-in">
+                  <div className="w-20 h-20 bg-lemon-grass/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="w-10 h-10 text-silver-fern" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-2xl text-silver-fern mb-4">{t[lang].contact.successHeading}</h3>
+                  <p className="font-sans text-pebbles/70 leading-relaxed mb-8">{c.success}</p>
+                  <button 
+                    onClick={() => { setIsModalOpen(false); setFormStatus(null); }}
+                    className="w-full bg-silver-fern text-cream py-4 rounded-full font-bold hover:bg-lemon-grass hover:text-pebbles transition-all"
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <h3 className="font-heading font-semibold text-2xl text-silver-fern mb-3 tracking-tight">
+                    {c.modalTitle}
+                  </h3>
+                  <p className="font-sans text-silver-fern font-bold text-sm mb-6 uppercase tracking-wider">
+                    {c.modalEmailPrompt}
+                  </p>
+
+                  <form onSubmit={handleModalSubmit} className="space-y-5">
+                    <div className="space-y-2">
+                      <input
+                        required
+                        type="email"
+                        placeholder={c.modalPlaceholder}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full bg-white border border-silver-fern/10 px-6 py-4 rounded-2xl font-sans text-sm focus:outline-none focus:border-silver-fern focus:ring-1 focus:ring-silver-fern transition-all shadow-sm"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={formStatus === 'SENDING'}
+                      className="w-full magnetic-btn bg-silver-fern text-cream py-4 rounded-full font-bold text-base hover:bg-lemon-grass hover:text-pebbles transition-all duration-300 shadow-lg shadow-silver-fern/20 mt-4 flex items-center justify-center gap-2"
+                    >
+                      {formStatus === 'SENDING' ? 'Sending...' : c.modalSubmit}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 };

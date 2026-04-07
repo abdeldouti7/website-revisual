@@ -8,14 +8,50 @@ import Logo from './Logo';
 const Navbar = () => {
   const navRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const { lang, setLang } = useLanguage();
   const c = t[lang].nav;
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    let lastScrollY = window.scrollY;
+    let idleTimer = null;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 50);
+
+      // Hide if scrolling down past 50, show if scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      
+      lastScrollY = currentScrollY;
+
+      // Handle idle hiding
+      if (idleTimer) clearTimeout(idleTimer);
+      if (currentScrollY > 50) {
+        idleTimer = setTimeout(() => {
+          setVisible(false);
+        }, 2000); // Hide after 2s of idle
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial setup if page is loaded scrolled down
+    if (window.scrollY > 50) {
+      idleTimer = setTimeout(() => {
+        setVisible(false);
+      }, 2000);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (idleTimer) clearTimeout(idleTimer);
+    };
   }, []);
 
   const navLinks = [
@@ -40,7 +76,7 @@ const Navbar = () => {
           scrolled
             ? 'bg-white/90 backdrop-blur-xl border border-silver-fern/10 shadow-lg text-silver-fern'
             : 'bg-white/60 backdrop-blur-md border border-pebbles/5 text-silver-fern'
-        }`}
+        } ${visible ? 'translate-y-0 opacity-100' : '-translate-y-[150%] opacity-0 pointer-events-none'}`}
       >
         {/* Logo */}
         <div
