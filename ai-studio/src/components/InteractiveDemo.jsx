@@ -161,11 +161,11 @@ const InteractiveDemo = () => {
 
       <div className="text-center mb-10 3xl:mb-16 max-w-3xl 3xl:max-w-5xl mx-auto">
         <h2 className="font-heading font-semibold text-3xl md:text-4xl lg:text-5xl 3xl:text-7xl 4xl:text-8xl text-silver-fern tracking-tight max-w-2xl 3xl:max-w-4xl mx-auto leading-tight mb-4">
-          {c.heading1}{' '}
           <span className="text-lemon-grass font-drama italic tracking-normal relative inline-block group cursor-default">
             {c.headingItalic}
             <span className="absolute -bottom-1 left-0 w-full h-1.5 bg-lemon-grass rounded-full animate-line-swipe"></span>
-          </span>
+          </span>{' '}
+          {c.heading1}
         </h2>
         <p className="mt-5 font-sans text-base 3xl:text-xl 4xl:text-2xl text-pebbles/70 leading-relaxed font-normal">
           {c.sub}
@@ -289,9 +289,10 @@ const InteractiveDemo = () => {
 
           <div className="bg-white border border-silver-fern/10 shadow-sm p-6 rounded-[1.5rem] mt-2 mb-6 relative w-full">
             <div className="absolute -top-3 -left-3 text-4xl text-silver-fern font-serif leading-none">"</div>
-            <p className="font-sans text-silver-fern/90 italic text-base font-medium leading-relaxed relative z-10">
-              {c.stat}
-            </p>
+            <p 
+              className="font-sans text-silver-fern/90 italic text-base font-medium leading-relaxed relative z-10"
+              dangerouslySetInnerHTML={{ __html: c.stat }}
+            />
             <p className="font-sans text-silver-fern/50 text-xs mt-3 uppercase tracking-wider font-bold">
               {c.statSource}
             </p>

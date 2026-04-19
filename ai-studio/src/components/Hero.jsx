@@ -86,7 +86,7 @@ const Hero = () => {
             <h1 className="flex flex-col leading-[0.92] tracking-tighter">
               <span
                 ref={el => elementsRef.current[0] = el}
-                className="font-drama italic text-lemon-grass text-4xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl 4xl:text-[8rem]"
+                className="font-heading font-semibold text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl 4xl:text-[8rem]"
               >
                 {c.line1}
               </span>
@@ -98,7 +98,7 @@ const Hero = () => {
               </span>
               <span
                 ref={el => elementsRef.current[2] = el}
-                className="font-heading font-semibold text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl 4xl:text-[8rem] mt-2 leading-[0.92]"
+                className="font-drama italic text-lemon-grass text-4xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl 4xl:text-[8rem] mt-2 pr-4 leading-[0.92]"
               >
                 {c.line3}
               </span>
@@ -106,10 +106,9 @@ const Hero = () => {
 
             <p
               ref={el => elementsRef.current[3] = el}
-              className="mt-8 text-pebbles/80 font-sans text-lg md:text-xl 3xl:text-2xl 4xl:text-3xl max-w-xl 3xl:max-w-2xl font-semibold leading-relaxed"
-            >
-              {c.sub}
-            </p>
+              className="mt-8 text-pebbles/80 font-sans text-[17px] md:text-[19px] lg:text-[20px] 3xl:text-[26px] 4xl:text-[32px] max-w-2xl 3xl:max-w-3xl font-medium leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: c.sub }}
+            />
 
             <div
               ref={el => elementsRef.current[4] = el}

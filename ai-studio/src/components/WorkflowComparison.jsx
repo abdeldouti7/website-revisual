@@ -56,7 +56,7 @@ const WorkflowComparison = () => {
                         {/* LEFT COLUMN — Traditional */}
                         <div className="p-8 md:p-10 lg:p-12 3xl:p-16 pt-10 md:pt-14 pb-12 md:pb-44 3xl:pb-64 flex flex-col items-center justify-start h-full bg-white relative">
                             <div className="relative z-10 w-full text-center md:text-left">
-                                <div className="mb-4 min-h-[100px] md:min-h-[110px] 3xl:min-h-[140px]">
+                                <div className="mb-4 min-h-[100px] md:h-[140px] lg:h-[120px] xl:h-[110px] 3xl:h-[150px]">
                                     <span className="inline-block px-3 py-1 rounded-full bg-silver-fern/5 text-silver-fern font-sans text-[10px] font-bold uppercase tracking-widest mb-4 border border-silver-fern/10">
                                         {c.leftLabel}
                                     </span>
@@ -65,11 +65,11 @@ const WorkflowComparison = () => {
                                     </h3>
                                 </div>
                                 
-                                <ul className="space-y-6 inline-block text-left pb-8 md:pb-20">
+                                <ul className="space-y-4 md:space-y-5 inline-block text-left pb-8 md:pb-20">
                                     {[c.leftB1, c.leftB2, c.leftB3, c.leftB4].map((bullet, i) => {
                                         const Icon = leftIcons[i];
                                         return (
-                                            <li key={i} className="flex items-start gap-4 text-silver-fern font-sans font-medium text-[16px] 3xl:text-lg leading-[1.4]">
+                                            <li key={i} className="flex items-start gap-4 text-silver-fern font-sans font-medium text-[16px] 3xl:text-lg leading-[1.4] md:min-h-[48px] 3xl:min-h-[50px]">
                                                 <div className="mt-1 w-5 h-5 rounded-full bg-silver-fern/5 flex items-center justify-center flex-shrink-0">
                                                     <Icon className="w-3 h-3 text-silver-fern/60" />
                                                 </div>
@@ -84,7 +84,7 @@ const WorkflowComparison = () => {
                         {/* RIGHT COLUMN — Revisual */}
                         <div className="p-8 md:p-10 lg:p-12 3xl:p-16 pt-10 md:pt-14 pb-32 md:pb-44 3xl:pb-64 flex flex-col items-center justify-start h-full bg-silver-fern relative text-cream">
                             <div className="relative z-10 w-full text-center md:text-left">
-                                <div className="mb-4 min-h-[100px] md:min-h-[110px] 3xl:min-h-[140px]">
+                                <div className="mb-4 min-h-[100px] md:h-[140px] lg:h-[120px] xl:h-[110px] 3xl:h-[150px]">
                                     <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-cream font-sans text-[10px] font-bold uppercase tracking-widest mb-4 border border-white/5">
                                         {c.rightLabel}
                                     </span>
@@ -93,11 +93,11 @@ const WorkflowComparison = () => {
                                     </h3>
                                 </div>
  
-                                <ul className="space-y-6 inline-block text-left pb-16 md:pb-20">
+                                <ul className="space-y-4 md:space-y-5 inline-block text-left pb-16 md:pb-20">
                                     {[c.rightB1, c.rightB2, c.rightB3, c.rightB4].map((bullet, i) => {
                                         const Icon = rightIcons[i];
                                         return (
-                                            <li key={i} className="flex items-start gap-4 text-cream font-sans font-medium text-[16px] 3xl:text-lg leading-[1.4] group">
+                                            <li key={i} className="flex items-start gap-4 text-cream font-sans font-medium text-[16px] 3xl:text-lg leading-[1.4] group md:min-h-[48px] 3xl:min-h-[50px]">
                                                 <div className="mt-1 w-[22px] h-[22px] rounded-full bg-lemon-grass flex items-center justify-center flex-shrink-0 shadow-lg shadow-lemon-grass/20 group-hover:scale-110 transition-transform duration-300">
                                                     <Icon className="w-3 h-3 text-silver-fern" />
                                                 </div>
